@@ -11,7 +11,8 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Renlaku
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">ログイン</Button>
+          <Button color="inherit">新規登録</Button>
         </Toolbar>
       </AppBar>
     </Box>
