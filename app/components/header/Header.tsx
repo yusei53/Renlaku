@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Box, AppBar, Toolbar, Typography, Button } from "@mui/material";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Renlaku
           </Typography>
-          <Button color="inherit">ログイン</Button>
+          <Link href={"/signup"}>ログイン</Link>
           <Button color="inherit">新規登録</Button>
         </Toolbar>
       </AppBar>
