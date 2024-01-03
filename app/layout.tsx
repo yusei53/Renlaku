@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "./components/header/header";
+import AuthContext from "./components/context/authContext";
+import ToasterContext from "./components/context/toasterContext";
+import SignupModal from "./components/modals/signupModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,8 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ margin: 0 }}>
-        <Header />
-        {children}
+        <AuthContext>
+          <ToasterContext />
+          <SignupModal />
+          <Header />
+          {children}
+        </AuthContext>
       </body>
     </html>
   );
