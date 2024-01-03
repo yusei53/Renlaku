@@ -116,7 +116,7 @@ export const SignupModal = () => {
       disabled={loading}
       isOpen={signupModal.isOpen}
       title="新規登録"
-      primaryLabel="新規登録"
+      primaryLabel="新規登録する"
       onClose={signupModal.onClose}
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}

@@ -1,7 +1,7 @@
 "use client";
 
-import { Modal as MuiModal, Box, Typography } from "@mui/material";
-import { useCallback } from "react";
+import { Box, Typography, Dialog } from "@mui/material";
+import { useCallback, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../button/button";
 
@@ -58,12 +58,10 @@ const Modal: React.FC<TProps> = ({
   }
 
   return (
-    <MuiModal open>
+    <Dialog open fullWidth>
       <Box>
-        <IoMdClose size={20} onClose={handleClose} />
-        <Typography variant="h6" component="h2">
-          {title}
-        </Typography>
+        <IoMdClose size={20} onClick={handleClose} />
+        <Typography component="h2">{title}</Typography>
         <Box>{body}</Box>
         <Box>
           {secondaryAction && secondaryLabel && (
@@ -83,7 +81,7 @@ const Modal: React.FC<TProps> = ({
         </Box>
         <Box>{footer}</Box>
       </Box>
-    </MuiModal>
+    </Dialog>
   );
 };
 

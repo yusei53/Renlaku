@@ -27,8 +27,8 @@ export const Input: React.FC<TProps> = ({
       type={type}
       disabled={disabled}
       {...register(id, { required })}
-      error
-      helperText={errors[id].message}
+      error={errors[id]}
+      helperText={errors[id]?.message}
     />
   );
 };
