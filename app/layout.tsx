@@ -4,6 +4,7 @@ import Header from "./components/header/header";
 import AuthContext from "./components/context/authContext";
 import ToasterContext from "./components/context/toasterContext";
 import SignupModal from "./components/modals/signupModal";
+import LoginModal from "./components/modals/loginModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <AuthContext>
           <ToasterContext />
           <SignupModal />
+          <LoginModal />
           <Header />
           {children}
         </AuthContext>
