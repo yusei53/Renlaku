@@ -1,7 +1,6 @@
 "use client";
-
 import { Box, Typography, Dialog } from "@mui/material";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../button/button";
 
