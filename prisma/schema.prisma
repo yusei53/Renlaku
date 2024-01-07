@@ -11,8 +11,14 @@ datasource db {
 }
 
 model User {
-  id String @id @default(uuid())
-  name String?
-  email String? @unique
-  hashedPassword String?
+  id               String   @id @default(uuid())
+  name             String?
+  email            String?  @unique
+  hashedPassword   String?
+  university       String?
+  grade            String?
+  universityNumber String?
+  privateEmail     String?
+  universityEmail  String?
+  phoneNumber      String?
 }
