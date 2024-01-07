@@ -7,7 +7,11 @@ type TProps = {
 };
 
 const MenuButton: React.FC<TProps> = ({ label, onClick }) => {
-  return <Box onClick={onClick}>{label}</Box>;
+  return (
+    <Box sx={{ cursor: "pointer" }} onClick={onClick}>
+      {label}
+    </Box>
+  );
 };
 
 export default MenuButton;
