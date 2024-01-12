@@ -10,14 +10,7 @@ type TProps = {
   icon?: IconType;
 };
 
-const Button: React.FC<TProps> = ({
-  label,
-  onClick,
-  disabled,
-  outline,
-  del,
-  icon: Icon,
-}) => {
+const Button: React.FC<TProps> = ({ label, onClick, disabled, icon: Icon }) => {
   return (
     <MuiButton
       disabled={disabled}
