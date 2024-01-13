@@ -12,8 +12,6 @@ type TProps = {
   body?: React.ReactElement;
   footer?: React.ReactElement;
   primaryLabel: string;
-  secondaryAction?: () => void;
-  secondaryLabel?: string;
   disabled?: boolean;
   del?: boolean;
 };
@@ -26,8 +24,6 @@ const Modal: React.FC<TProps> = ({
   body,
   footer,
   primaryLabel,
-  secondaryAction,
-  secondaryLabel,
   disabled,
   del = false,
 }) => {
@@ -45,13 +41,6 @@ const Modal: React.FC<TProps> = ({
     onSubmit();
   }, [onSubmit, disabled]);
 
-  const handleSecondaryAction = useCallback(() => {
-    if (disabled || !secondaryAction) {
-      return;
-    }
-    secondaryAction();
-  }, [secondaryAction, disabled]);
-
   if (!isOpen) {
     return null;
   }
@@ -63,14 +52,6 @@ const Modal: React.FC<TProps> = ({
         <Typography component="h2">{title}</Typography>
         <Box>{body}</Box>
         <Box>
-          {secondaryAction && secondaryLabel && (
-            <Button
-              disabled={disabled}
-              label={secondaryLabel}
-              onClick={handleSecondaryAction}
-              outline
-            />
-          )}
           <Button
             disabled={disabled}
             label={primaryLabel}

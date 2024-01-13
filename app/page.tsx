@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import getCurrentUser from "./actions/getCurrentUser";
 
-export const Home = async () => {
+const Home = async () => {
   const currentUser = await getCurrentUser();
   return (
     <Box>

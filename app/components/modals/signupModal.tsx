@@ -20,7 +20,7 @@ const schema = z.object({
   password: z.string().min(6, { message: "6文字以上入力する必要があります" }),
 });
 
-export const SignupModal = () => {
+const SignupModal = () => {
   const router = useRouter();
   const signupModal = useSignupModal();
   const loginModal = useLoginModal();
@@ -120,7 +120,7 @@ export const SignupModal = () => {
       onSubmit={handleSubmit(onSubmit)}
       body={bodyContent}
       footer={footerContent}
-    ></Modal>
+    />
   );
 };
 
