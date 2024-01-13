@@ -1,13 +1,17 @@
+import { Box, Typography } from "@mui/material";
 import getCurrentUser from "./actions/getCurrentUser";
-import T from "./t";
 
-export default async function Test() {
+export const Home = async () => {
   const currentUser = await getCurrentUser();
-
   return (
-    <>
-      <div>未認証</div>
-      <T currentUser={currentUser} />
-    </>
+    <Box>
+      {currentUser ? (
+        <Typography>認証中</Typography>
+      ) : (
+        <Typography>未認証</Typography>
+      )}
+    </Box>
   );
-}
+};
+
+export default Home;
