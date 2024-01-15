@@ -5,9 +5,9 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import Input from "../components/input/input";
 import ProfilePage from "./profilePage";
 import { User } from "@prisma/client";
+import { Input } from "../components/common/input/input";
 
 type TProps = {
   currentUser: User | null;

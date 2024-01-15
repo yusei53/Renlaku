@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Header from "./components/header/header";
+import Header from "./components/common/header/header";
 import AuthContext from "./components/context/authContext";
 import ToasterContext from "./components/context/toasterContext";
-import SignupModal from "./components/modals/signupModal";
-import LoginModal from "./components/modals/loginModal";
+import SignupModal from "./components/common/modals/signupModal";
+import LoginModal from "./components/common/modals/loginModal";
 import getCurrentUser from "./actions/getCurrentUser";
 
 const inter = Inter({ subsets: ["latin"] });
