@@ -1,11 +1,11 @@
 "use client";
-import { Box, AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Toolbar, Typography } from "@mui/material";
 import { User } from "@prisma/client";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import useSignupModal from "@/app/hooks/useSignupModal";
-import MenuButton from "../menu/menuButton";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
+import LpButton from "../menu/LpButton";
 
 type TProps = {
   currentUser: User | null;
@@ -13,45 +13,63 @@ type TProps = {
 
 const Header: React.FC<TProps> = ({ currentUser }) => {
   const signupModal = useSignupModal();
-  const [isOpen, setIsOpen] = useState(false);
   const loginModal = useLoginModal();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Box component={"header"}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Renlaku
-          </Typography>
-          {currentUser ? (
-            <MenuButton
+    <AppBar position="static" sx={{ bgcolor: "white", p: 0.5 }}>
+      <Toolbar>
+        <Typography flexGrow={1} color={"black"} fontSize={"1.8rem"}>
+          Renlaku
+        </Typography>
+        <LpButton
+          bgColor="white"
+          color="black"
+          onClick={() => {}}
+          label="サービスについて"
+        />
+        {currentUser ? (
+          <LpButton
+            bgColor="white"
+            color="black"
+            onClick={() => {
+              signOut();
+              setIsOpen(false);
+            }}
+            label="ログアウト"
+          />
+        ) : (
+          <Fragment>
+            <LpButton
+              bgColor="white"
+              color="black"
               onClick={() => {
-                signOut();
+                loginModal.onOpen();
                 setIsOpen(false);
               }}
-              label={"ログアウト"}
+              label="ログイン"
             />
-          ) : (
-            <>
-              <MenuButton
-                onClick={() => {
-                  loginModal.onOpen();
-                  setIsOpen(false);
-                }}
-                label="ログイン"
-              />
-              <MenuButton
-                onClick={() => {
-                  signupModal.onOpen();
-                  setIsOpen(false);
-                }}
-                label="新規登録"
-              />
-            </>
-          )}
-        </Toolbar>
-      </AppBar>
-    </Box>
+            <LpButton
+              bgColor="white"
+              color="black"
+              onClick={() => {
+                signupModal.onOpen();
+                setIsOpen(false);
+              }}
+              label="新規登録"
+            />
+          </Fragment>
+        )}
+        <LpButton
+          label="まずは使ってみる"
+          onClick={() => {}}
+          hover
+          props={{
+            m: "12px",
+          }}
+        />
+      </Toolbar>
+    </AppBar>
   );
 };
 
