@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { useCallback } from "react";
-import Button from "../components/common/button/button";
+import Button from "../_components/common/button/button";
 
 type TProps = {
   onSubmit: () => void;

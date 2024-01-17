@@ -7,7 +7,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import ProfilePage from "./profilePage";
 import { User } from "@prisma/client";
-import { Input } from "../components/common/input/input";
+import { Input } from "../_components/common/input/input";
 
 type TProps = {
   currentUser: User | null;
