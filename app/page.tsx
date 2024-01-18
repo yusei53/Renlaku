@@ -1,16 +1,14 @@
-import { Box, Typography } from "@mui/material";
+import { Fragment } from "react";
 import getCurrentUser from "./actions/getCurrentUser";
+import { Onboarding } from "./_components/common/onBoarding";
 
 const Home = async () => {
   const currentUser = await getCurrentUser();
   return (
-    <Box>
-      {currentUser ? (
-        <Typography>認証中</Typography>
-      ) : (
-        <Typography>未認証</Typography>
-      )}
-    </Box>
+    <Fragment>
+      <Onboarding />
+      {currentUser ? <div>認証中</div> : <div>未認証</div>}
+    </Fragment>
   );
 };
 
