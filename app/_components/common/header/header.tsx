@@ -11,7 +11,7 @@ type TProps = {
   currentUser: User | null;
 };
 
-const Header: React.FC<TProps> = ({ currentUser }) => {
+export const Header: React.FC<TProps> = ({ currentUser }) => {
   const signupModal = useSignupModal();
   const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
@@ -72,5 +72,3 @@ const Header: React.FC<TProps> = ({ currentUser }) => {
     </AppBar>
   );
 };
-
-export default Header;
