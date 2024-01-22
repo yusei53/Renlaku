@@ -1,8 +1,5 @@
 "use client";
 import { Box, Typography, styled } from "@mui/material";
-import Image from "next/image";
-import LpButton from "../menu/LpButton";
-import Check from "./check";
 import QuestionBar from "./questionBar";
 
 export const Question = () => {
@@ -11,7 +8,7 @@ export const Question = () => {
       <Box display="flex" alignItems="center" flexDirection={"column"}>
         <Typography
           mt={2}
-          fontSize={30}
+          fontSize={{ xs: 20, sm: 30 }}
           fontWeight={"bold"}
           component={"h2"}
           letterSpacing={2}
