@@ -20,6 +20,7 @@ const LpButton: React.FC<TProps> = ({
   return (
     <Box
       component={"button"}
+      margin={"8px"}
       p={"8px 14px"}
       border={"none"}
       bgcolor={bgColor}
