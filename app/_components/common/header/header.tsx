@@ -25,6 +25,9 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
         <LpButton
           bgColor="white"
           color="black"
+          props={{
+            display: { xs: "none", sm: "none", md: "block" },
+          }}
           onClick={() => {}}
           label="サービスについて"
         />
@@ -32,6 +35,9 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
           <LpButton
             bgColor="white"
             color="black"
+            props={{
+              display: { xs: "none", sm: "block" },
+            }}
             onClick={() => {
               signOut();
               setIsOpen(false);
@@ -43,6 +49,9 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
             <LpButton
               bgColor="white"
               color="black"
+              props={{
+                display: { xs: "none", sm: "block" },
+              }}
               onClick={() => {
                 loginModal.onOpen();
                 setIsOpen(false);
@@ -52,6 +61,9 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
             <LpButton
               bgColor="white"
               color="black"
+              props={{
+                display: { xs: "none", sm: "block" },
+              }}
               onClick={() => {
                 signupModal.onOpen();
                 setIsOpen(false);

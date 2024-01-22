@@ -1,4 +1,4 @@
-import { BoxProps, styled } from "@mui/material";
+import { styled } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 
 export const Check = () => {
