@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import getCurrentUser from "./actions/getCurrentUser";
 import { Onboarding } from "./_components/common/onBoarding";
-import { Question } from "./_components/common/question/question";
+import { Question } from "./_components/common/question";
 
 const Home = async () => {
   const currentUser = await getCurrentUser();
