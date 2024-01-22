@@ -8,9 +8,10 @@ type TProps = {
 const QuestionBar: React.FC<TProps> = ({ label }) => {
   return (
     <Box
-      width={600}
+      width="100%"
+      maxWidth={600}
       paddingY={3}
-      paddingLeft={28}
+      paddingLeft={{ xs: 3, sm: 17, lg: 28 }}
       display={"flex"}
       alignItems={"center"}
       bgcolor={"white"}
@@ -18,10 +19,15 @@ const QuestionBar: React.FC<TProps> = ({ label }) => {
       marginY={2}
       position="relative"
     >
-      <Box position="absolute" left={160}>
+      <Box position="absolute" left={{ xs: 23, sm: 120, md: 130, lg: 160 }}>
         <Check />
       </Box>
-      <Typography fontSize={18}>{label}</Typography>
+      <Typography
+        fontSize={{ xs: 15, sm: 18 }}
+        paddingX={{ xs: 4, md: 5, lg: 0 }}
+      >
+        {label}
+      </Typography>
     </Box>
   );
 };
