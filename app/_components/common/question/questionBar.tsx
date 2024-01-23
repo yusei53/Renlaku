@@ -1,17 +1,20 @@
 import { Box, Typography } from "@mui/material";
 import Check from "./check";
+import Image from "next/image";
 
 type TProps = {
   label: string;
+  ImageSrc?: string;
+  AltText?: string;
 };
 
-const QuestionBar: React.FC<TProps> = ({ label }) => {
+const QuestionBar: React.FC<TProps> = ({ label, ImageSrc, AltText }) => {
   return (
     <Box
       width="100%"
       maxWidth={600}
       paddingY={3}
-      paddingLeft={{ xs: 3, sm: 17, lg: 28 }}
+      paddingLeft={{ xs: 3, sm: 10, lg: 28 }}
       display={"flex"}
       alignItems={"center"}
       bgcolor={"white"}
@@ -19,7 +22,7 @@ const QuestionBar: React.FC<TProps> = ({ label }) => {
       marginY={2}
       position="relative"
     >
-      <Box position="absolute" left={{ xs: 23, sm: 120, md: 130, lg: 160 }}>
+      <Box position="absolute" left={{ xs: 23, sm: 70, md: 90, lg: 160 }}>
         <Check />
       </Box>
       <Typography
@@ -28,6 +31,16 @@ const QuestionBar: React.FC<TProps> = ({ label }) => {
       >
         {label}
       </Typography>
+      {ImageSrc && AltText && (
+        <Box
+          position="absolute"
+          top={{ xs: "210%", sm: "170%", md: 10 }}
+          right={{ xs: -10, md: -80, lg: -60 }}
+          zIndex={2}
+        >
+          <Image width={230} height={200} src={ImageSrc} alt={AltText} />
+        </Box>
+      )}
     </Box>
   );
 };
