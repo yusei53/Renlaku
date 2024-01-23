@@ -34,11 +34,11 @@ const QuestionBar: React.FC<TProps> = ({ label, ImageSrc, AltText }) => {
       {ImageSrc && AltText && (
         <Box
           position="absolute"
-          top={{ xs: "210%", sm: "190%", md: 10 }}
-          right={{ xs: -10, md: -70, lg: -60 }}
+          top={{ xs: "210%", sm: "170%", md: 10 }}
+          right={{ xs: -10, md: -80, lg: -60 }}
           zIndex={2}
         >
-          <Image width={220} height={200} src={ImageSrc} alt={AltText} />
+          <Image width={230} height={200} src={ImageSrc} alt={AltText} />
         </Box>
       )}
     </Box>
