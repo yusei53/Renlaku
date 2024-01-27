@@ -16,7 +16,7 @@ export const Solution = () => {
 
   return (
     <Container>
-      <Box color={"white"} component={"h2"}>
+      <Box color={"white"} paddingY={3}>
         <Box mb={2}>
           <Typography
             fontSize={{ xs: 24, sm: 30 }}
@@ -128,7 +128,7 @@ export const Solution = () => {
             fontWeight: "bold",
             borderRadius: 2,
             marginX: { xs: 5, sm: 20, md: 30, lg: 40 },
-            mb: "3%",
+            mb: 5,
           }}
         />
       </Box>
@@ -141,8 +141,11 @@ const Container = styled("div")(({ theme }) => ({
   flexDirection: "column",
   alignItems: "center",
   padding: "3% 5%",
+  paddingBottom: "5%",
   backgroundColor: "#006EE3",
-  [theme.breakpoints.down("md")]: {},
+  [theme.breakpoints.down("md")]: {
+    paddingBottom: "10%",
+  },
 }));
 
 const Highlight = styled("span")({
