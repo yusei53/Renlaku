@@ -1,14 +1,13 @@
 "use client";
 import {
   Box,
-  Grid,
   Typography,
   styled,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import SolutionCard from "./solutionCard";
 import LpButton from "../menu/LpButton";
+import SolutionGridCard from "./solutionGridCard";
 
 export const Solution = () => {
   const theme = useTheme();
@@ -77,47 +76,7 @@ export const Solution = () => {
             )}
           </Typography>
         </Box>
-        <Grid container spacing={1} padding={"2% 4%"}>
-          <Grid item xs={12} sm={12} md={12} lg={4} xl={4} paddingY={2}>
-            <SolutionCard
-              title="メールを高速で作成"
-              description={
-                <span>
-                  必要な項目のみ入力で
-                  <br />
-                  文が自動生成
-                </span>
-              }
-              smallScreen
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={4} xl={4} paddingY={2}>
-            <SolutionCard
-              title="使い回し可能"
-              description={
-                <span>
-                  プロフィール項目登録で
-                  <br />
-                  都度コピーするだけ
-                </span>
-              }
-              smallScreen={isSmallScreen ? false : true}
-            />
-          </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={4} xl={4} paddingY={2}>
-            <SolutionCard
-              title="バリエーションが豊富"
-              description={
-                <span>
-                  学生がよく送るメールの
-                  <br />
-                  テンプレートを用意
-                </span>
-              }
-              smallScreen={isSmallScreen ? false : true}
-            />
-          </Grid>
-        </Grid>
+        <SolutionGridCard />
         <LpButton
           label="新規登録 / ログイン"
           onClick={() => {}}
@@ -127,7 +86,7 @@ export const Solution = () => {
             p: { xs: "12px", sm: "14px", lg: "15px" },
             fontWeight: "bold",
             borderRadius: 2,
-            marginX: { xs: 5, sm: 20, md: 30, lg: 40 },
+            mx: { xs: 5, sm: 20, md: 30, lg: 40 },
             mb: 5,
           }}
         />
@@ -140,7 +99,7 @@ const Container = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  padding: "3% 5%",
+  p: "3% 5%",
   paddingBottom: "5%",
   backgroundColor: "#006EE3",
   [theme.breakpoints.down("md")]: {
