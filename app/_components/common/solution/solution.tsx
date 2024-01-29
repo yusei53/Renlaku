@@ -22,6 +22,7 @@ export const Solution = () => {
             fontWeight="bold"
             letterSpacing={1.5}
             component={"h2"}
+            m={4}
           >
             {isSmallScreen ? (
               <>
@@ -43,7 +44,7 @@ export const Solution = () => {
       <Box
         bgcolor={"white"}
         borderRadius={5}
-        width={{ xs: "100%", sm: "90%" }}
+        width={{ xs: "100%", sm: "85%" }}
         height={"auto"}
         display={"flex"}
         flexDirection={"column"}
@@ -54,10 +55,9 @@ export const Solution = () => {
             component={"h3"}
             fontSize={{ xs: 22, sm: 27 }}
             fontWeight={"bold"}
-            pt={3}
+            pt={5}
             letterSpacing={3.5}
             fontFamily={'"Helvetica Neue", Helvetica, Arial, sans-serif'}
-            paddingX={0.5}
             lineHeight={1.2}
           >
             {isSmallScreen ? (
@@ -82,11 +82,12 @@ export const Solution = () => {
           onClick={() => {}}
           hover
           props={{
-            fontSize: { xs: "16px", sm: "18px", lg: "20px" },
+            fontSize: { xs: "16px", sm: "18px" },
             p: { xs: "12px", sm: "14px", lg: "15px" },
             fontWeight: "bold",
             borderRadius: 2,
-            mx: { xs: 5, sm: 20, md: 30, lg: 40 },
+            mx: { xs: 5, sm: 20, md: 30, lg: "350px" },
+
             mb: 5,
           }}
         />
