@@ -4,6 +4,7 @@ import { Onboarding } from "./_components/common/onBoarding";
 import { Question } from "./_components/common/question";
 import { Solution } from "./_components/common/solution";
 import { Service } from "./_components/common/service";
+import { Setting } from "./_components/common/setting";
 
 const Home = async () => {
   const currentUser = await getCurrentUser();
@@ -13,6 +14,7 @@ const Home = async () => {
       <Question />
       <Solution />
       <Service />
+      <Setting />
       {currentUser ? <div>認証中</div> : <div>未認証</div>}
     </Fragment>
   );

@@ -1,19 +1,21 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
 type TProps = {
   title: string;
-  description: React.ReactNode;
-  smallScreen: boolean;
+  firstContent: string;
+  secondContent: string;
+  smallScreen?: boolean;
 };
 
 const SolutionCard: React.FC<TProps> = ({
   title,
-  description,
-  smallScreen,
+  firstContent,
+  secondContent,
+  smallScreen = true,
 }) => (
   <>
     {smallScreen && (
@@ -46,18 +48,20 @@ const SolutionCard: React.FC<TProps> = ({
         </Typography>
       </Box>
       <CardContent>
-        <Typography
-          textAlign={"center"}
-          fontSize={18}
-          fontWeight={"bold"}
-          letterSpacing={1.5}
-          p={"15px"}
-        >
-          {description}
-        </Typography>
+        <StyledContent>{firstContent}</StyledContent>
+        <StyledContent>{secondContent}</StyledContent>
       </CardContent>
     </Card>
   </>
 );
+
+const StyledContent = styled(Typography)(({ theme }) => ({
+  textAlign: "center",
+  fontSize: 18,
+  fontWeight: "bold",
+  letterSpacing: 1.5,
+  padding: "15px",
+  [theme.breakpoints.down("md")]: {},
+}));
 
 export default SolutionCard;

@@ -6,10 +6,10 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import SettingGridCard from "./settingGridCard";
 import LpButton from "../menu/LpButton";
-import SolutionGridCard from "./solutionGridCard";
 
-export const Solution = () => {
+export const Setting = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -24,34 +24,21 @@ export const Solution = () => {
             component={"h2"}
             m={4}
           >
-            {isSmallScreen ? (
-              <>
-                Renlakuなら
-                <br />
-                <Highlight>学生の悩み</Highlight>
-                を解決します！
-              </>
-            ) : (
-              <>
-                Renlakuなら
-                <Highlight>学生の悩み</Highlight>
-                を解決します！
-              </>
-            )}
+            導入の流れ
           </Typography>
         </Box>
       </Box>
       <Box
         bgcolor={"white"}
         borderRadius={5}
-        width={{ xs: "100%", sm: "85%" }}
+        width={{ xs: "90%", sm: "85%" }}
         height={"auto"}
         display={"flex"}
         flexDirection={"column"}
       >
-        <Box textAlign={"center"}>
+        <Box>
           <Typography
-            display={"inline-block"}
+            textAlign={"center"}
             component={"h3"}
             fontSize={{ xs: 22, sm: 27 }}
             fontWeight={"bold"}
@@ -62,32 +49,31 @@ export const Solution = () => {
           >
             {isSmallScreen ? (
               <>
-                Renlakuに登録で
-                <Border />
+                <Highlight>誰でも簡単登録</Highlight>!
                 <br />
-                圧倒的時間短縮
-                <Border />
+                設定は<Highlight>3つ</Highlight>だけ！
               </>
             ) : (
               <>
-                Renlakuに登録で圧倒的時間短縮
-                <Border />
+                <Highlight>誰でも簡単登録</Highlight> ! 設定は
+                <Highlight>3つ</Highlight>
+                だけ！
               </>
             )}
           </Typography>
         </Box>
-        <SolutionGridCard />
+        <SettingGridCard />
         <LpButton
           label="新規登録 / ログイン"
           onClick={() => {}}
           hover
           props={{
             fontSize: { xs: "16px", sm: "18px" },
-            p: { xs: "12px", sm: "14px", lg: "15px" },
+            p: { xs: "12px", sm: "15px" },
             fontWeight: "bold",
             borderRadius: 2,
             mx: { xs: 5, sm: 20, md: 30, lg: "350px" },
-
+            mt: 3,
             mb: 5,
           }}
         />
@@ -109,9 +95,20 @@ const Container = styled("div")(({ theme }) => ({
 }));
 
 const Highlight = styled("span")({
-  color: "#FEDD49",
+  color: "#006EE3",
 });
 
-const Border = styled("div")({
-  borderBottom: "solid 9px #006EE3",
+const NumberCircle = styled(Box)({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  width: 45,
+  height: 45,
+  borderRadius: "50%",
+  backgroundColor: "#006EE3",
+  color: "white",
+  fontWeight: "bold",
+  border: "solid 2px white",
+  marginBottom: 10,
+  marginTop: "-35px",
 });
