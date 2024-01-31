@@ -77,7 +77,7 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
           onClick={() => {}}
           hover
           props={{
-            m: "12px",
+            m: { xs: "12px 0", sm: "12px" },
           }}
         />
       </Toolbar>
