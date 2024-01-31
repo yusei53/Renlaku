@@ -59,6 +59,7 @@ const SignupModal = () => {
         });
 
         signupModal.onClose();
+        router.push("/test2");
         router.refresh();
       }
     } catch (error) {
