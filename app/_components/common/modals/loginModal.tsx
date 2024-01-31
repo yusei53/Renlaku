@@ -59,6 +59,7 @@ const LoginModal = () => {
 
       toast.success("ログインしました");
       loginModal.onClose();
+      router.push("/test2");
       router.refresh();
     } catch (error) {
       toast.error("エラーが発生しました" + error);

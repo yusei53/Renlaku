@@ -97,18 +97,3 @@ const Container = styled("div")(({ theme }) => ({
 const Highlight = styled("span")({
   color: "#006EE3",
 });
-
-const NumberCircle = styled(Box)({
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  width: 45,
-  height: 45,
-  borderRadius: "50%",
-  backgroundColor: "#006EE3",
-  color: "white",
-  fontWeight: "bold",
-  border: "solid 2px white",
-  marginBottom: 10,
-  marginTop: "-35px",
-});

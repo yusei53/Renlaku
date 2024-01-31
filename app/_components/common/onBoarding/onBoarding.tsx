@@ -15,7 +15,7 @@ export const Onboarding = () => {
 
   return (
     <Container>
-      <Box mb={5}>
+      <Box mb={4}>
         <Typography
           mt={3}
           fontSize={{ xs: 16, sm: 19, lg: 21 }}
@@ -35,7 +35,7 @@ export const Onboarding = () => {
         </Typography>
         <Typography
           component={"h1"}
-          fontSize={{ xs: 40, sm: 48, lg: 53 }}
+          fontSize={{ xs: 35, sm: 45, lg: 50 }}
           mt={3}
           fontWeight={"bold"}
           lineHeight={1.5}
@@ -85,7 +85,6 @@ export const Onboarding = () => {
             hover
             props={{
               fontSize: { xs: "14px", sm: "18px", lg: "20px" },
-
               p: { xs: "12px 15px", sm: "14px 28px", lg: "15px 30px" },
               fontWeight: "bold",
               borderRadius: 2,
@@ -113,6 +112,6 @@ const ResponsiveImage = styled(Image)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     width: "90%",
     height: "auto",
-    marginTop: "5%",
+    marginTop: "-4%",
   },
 }));

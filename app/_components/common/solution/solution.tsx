@@ -44,7 +44,7 @@ export const Solution = () => {
       <Box
         bgcolor={"white"}
         borderRadius={5}
-        width={{ xs: "100%", sm: "85%" }}
+        width={{ xs: "90%", sm: "85%" }}
         height={"auto"}
         display={"flex"}
         flexDirection={"column"}
