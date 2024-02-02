@@ -13,7 +13,7 @@ const InputCompoonent: React.FC<TProps> = ({ userData, updateUserData }) => {
         display={"flex"}
         alignItems={"center"}
         flexDirection={"column"}
-        my={5}
+        my={2}
       >
         <Typography>step1. 欠席理由を選択してね！</Typography>
         {/* <FormControl sx={{ width: "200px" }}>
@@ -101,9 +101,10 @@ const InputCompoonent: React.FC<TProps> = ({ userData, updateUserData }) => {
           >
             <TextField
               id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
+              label="先生"
               size="small"
+              value={userData.teacher || ""}
+              onChange={(e) => updateUserData("teacher", e.target.value)}
             />
           </Grid>
           <Grid
@@ -120,9 +121,10 @@ const InputCompoonent: React.FC<TProps> = ({ userData, updateUserData }) => {
           >
             <TextField
               id="outlined-basic"
-              label="Outlined"
-              variant="outlined"
+              label="学年"
               size="small"
+              value={userData.grade || ""}
+              onChange={(e) => updateUserData("grade", e.target.value)}
             />
           </Grid>
           <Grid

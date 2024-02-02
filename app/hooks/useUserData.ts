@@ -5,9 +5,13 @@ const useUserData = (currentUser: User | null) => {
   const [userData, setUserData] = useState<{
     name: string | null;
     university: string | null;
+    teacher: string | null;
+    grade: string | null;
   }>({
     name: null,
     university: null,
+    teacher: null,
+    grade: null,
   });
 
   useEffect(() => {
@@ -15,6 +19,8 @@ const useUserData = (currentUser: User | null) => {
       setUserData({
         name: currentUser.name,
         university: currentUser.university,
+        teacher: currentUser.teacher,
+        grade: currentUser.grade,
       });
     }
   }, [currentUser]);
