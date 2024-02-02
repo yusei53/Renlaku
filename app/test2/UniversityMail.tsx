@@ -14,7 +14,7 @@ const UniversityMail: React.FC<TProps> = ({ currentUser }) => {
 
   return (
     <>
-      <Container>
+      <Container disableGutters sx={{ my: 5 }}>
         <Grid container>
           <Grid item xs={12} sm={6}>
             <InputCompoonent
