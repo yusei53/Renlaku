@@ -14,8 +14,7 @@ const FirstView: React.FC<TProps> = ({ currentUser }) => {
       flexDirection={"column"}
       alignItems={"center"}
       bgcolor={"#016fe5"}
-      pt={6}
-      pb={5}
+      py={6}
     >
       {currentUser ? (
         <Typography color={"white"} fontSize={24}>
@@ -34,9 +33,9 @@ const FirstView: React.FC<TProps> = ({ currentUser }) => {
       </Typography>
       <Link href="/login">
         <Typography
+          color={"white"}
           sx={{
             textDecoration: "underline",
-            color: "white",
             "&:hover": {
               color: "#FEDD49",
               cursor: "pointer",
