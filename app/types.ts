@@ -9,4 +9,11 @@ export type UserDataType = {
   university: string | null;
   teacher: string | null;
   grade: string | null;
+  reasonText: string | null;
+  date: string | null;
+  time: string | null;
+  lesson: string | null;
+  id: string | null;
+  mail: string | null;
+  number: string | null;
 };
