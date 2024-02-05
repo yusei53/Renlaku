@@ -11,9 +11,9 @@ const useUserData = (currentUser: User | null) => {
     date: string | null;
     time: string | null;
     lesson: string | null;
-    id: string | null;
-    mail: string | null;
-    number: string | null;
+    universityNumber: string | null;
+    universityEmail: string | null;
+    phoneNumber: string | null;
   }>({
     name: null,
     university: null,
@@ -23,9 +23,9 @@ const useUserData = (currentUser: User | null) => {
     date: null,
     time: null,
     lesson: null,
-    id: null,
-    mail: null,
-    number: null,
+    universityNumber: null,
+    universityEmail: null,
+    phoneNumber: null,
   });
 
   useEffect(() => {
@@ -39,9 +39,9 @@ const useUserData = (currentUser: User | null) => {
         date: currentUser.date,
         time: currentUser.time,
         lesson: currentUser.lesson,
-        id: currentUser.id,
-        mail: currentUser.mail,
-        number: currentUser.number,
+        universityNumber: currentUser.universityNumber,
+        universityEmail: currentUser.universityEmail,
+        phoneNumber: currentUser.phoneNumber,
       });
     }
   }, [currentUser]);

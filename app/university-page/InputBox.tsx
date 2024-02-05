@@ -54,7 +54,7 @@ const InputBox: React.FC<TProps> = ({ userData, updateUserData }) => {
           </Grid>
           <Grid item xs={12} sm={6} p={2}>
             <CustomInput
-              label={"大学/学部/学科"}
+              label={"大学学部学科"}
               value={userData.university}
               onChange={(e) => updateUserData("university", e.target.value)}
             />
@@ -65,6 +65,13 @@ const InputBox: React.FC<TProps> = ({ userData, updateUserData }) => {
               value={userData.grade}
               onChange={(e) => updateUserData("grade", e.target.value)}
               type="number"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} p={2}>
+            <CustomInput
+              label={"名前"}
+              value={userData.name}
+              onChange={(e) => updateUserData("name", e.target.value)}
             />
           </Grid>
           <Grid item xs={12} sm={6} p={2}>
@@ -92,14 +99,25 @@ const InputBox: React.FC<TProps> = ({ userData, updateUserData }) => {
           <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"学籍番号"}
-              value={userData.id}
-              onChange={(e) => updateUserData("id", e.target.value)}
+              value={userData.universityNumber}
+              onChange={(e) =>
+                updateUserData("universityNumber", e.target.value)
+              }
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} p={2}>
+            <CustomInput
+              label={"大学用メールアドレス"}
+              value={userData.universityEmail}
+              onChange={(e) =>
+                updateUserData("universityEmail", e.target.value)
+              }
             />
           </Grid>
           <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"電話番号"}
-              value={userData.number}
+              value={userData.phoneNumber}
               onChange={(e) => updateUserData("number", e.target.value)}
             />
           </Grid>

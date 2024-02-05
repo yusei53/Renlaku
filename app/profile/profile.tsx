@@ -106,7 +106,7 @@ const Profile: React.FC<TProps> = ({ currentUser }) => {
         onChange={handleInputChange}
       />
       <Input
-        id="email"
+        id="privateEmail"
         label="メールアドレス"
         disabled={loading}
         register={register}
@@ -116,7 +116,7 @@ const Profile: React.FC<TProps> = ({ currentUser }) => {
         onChange={handleInputChange}
       />
       <Input
-        id="universityMail"
+        id="universityEmail"
         label="大学用メールアドレス"
         disabled={loading}
         register={register}
