@@ -45,21 +45,21 @@ const InputBox: React.FC<TProps> = ({ userData, updateUserData }) => {
       <Box my={5}>
         <Typography>step2. 隣のテンプレート文を参考に入力してね！</Typography>
         <Grid container p={1} px={3}>
-          <Grid item xs={12} sm={6} xl={4} p={2}>
+          <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"教授の名前"}
               value={userData.teacher}
               onChange={(e) => updateUserData("teacher", e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={6} xl={4} p={2}>
+          <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"大学/学部/学科"}
               value={userData.university}
               onChange={(e) => updateUserData("university", e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={6} xl={4} p={2}>
+          <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"学年(半角数字のみ)"}
               value={userData.grade}
@@ -67,14 +67,14 @@ const InputBox: React.FC<TProps> = ({ userData, updateUserData }) => {
               type="number"
             />
           </Grid>
-          <Grid item xs={12} sm={6} xl={4} p={2}>
+          <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"日付"}
               value={userData.date}
               onChange={(e) => updateUserData("date", e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={6} xl={4} p={2}>
+          <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"何限目(半角数字のみ)"}
               value={userData.time}
@@ -82,21 +82,21 @@ const InputBox: React.FC<TProps> = ({ userData, updateUserData }) => {
               type="number"
             />
           </Grid>
-          <Grid item xs={12} sm={6} xl={4} p={2}>
+          <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"講義名"}
               value={userData.lesson}
               onChange={(e) => updateUserData("lesson", e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={6} xl={4} p={2}>
+          <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"学籍番号"}
               value={userData.id}
               onChange={(e) => updateUserData("id", e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={6} xl={4} p={2}>
+          <Grid item xs={12} sm={6} p={2}>
             <CustomInput
               label={"電話番号"}
               value={userData.number}
