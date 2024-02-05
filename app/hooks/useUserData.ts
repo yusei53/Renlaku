@@ -1,20 +1,9 @@
 import { User } from "@prisma/client";
 import { useEffect, useState } from "react";
+import { UserDataType } from "../types";
 
 const useUserData = (currentUser: User | null) => {
-  const [userData, setUserData] = useState<{
-    name: string | null;
-    university: string | null;
-    teacher: string | null;
-    grade: string | null;
-    reasonText: string | null;
-    date: string | null;
-    time: string | null;
-    lesson: string | null;
-    universityNumber: string | null;
-    universityEmail: string | null;
-    phoneNumber: string | null;
-  }>({
+  const [userData, setUserData] = useState<UserDataType>({
     name: null,
     university: null,
     teacher: null,
