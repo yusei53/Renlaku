@@ -7,8 +7,10 @@ type TProps = {
   type?: string;
   disabled?: boolean;
   required?: boolean;
+  value?: string;
   register: UseFormRegister<FieldValues>;
   errors: any;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const Input: React.FC<TProps> = ({
@@ -17,8 +19,10 @@ export const Input: React.FC<TProps> = ({
   type = "text",
   disabled,
   required,
+  value,
   register,
   errors,
+  onChange,
 }) => {
   return (
     <TextField
@@ -26,9 +30,11 @@ export const Input: React.FC<TProps> = ({
       label={label}
       type={type}
       disabled={disabled}
+      defaultValue={value || ""}
       {...register(id, { required })}
       error={errors[id]}
       helperText={errors[id]?.message}
+      onChange={onChange}
     />
   );
 };

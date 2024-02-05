@@ -20,6 +20,7 @@ const Profile: React.FC<TProps> = ({ currentUser }) => {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
     reset,
   } = useForm<FieldValues>();
@@ -56,6 +57,11 @@ const Profile: React.FC<TProps> = ({ currentUser }) => {
     }
   };
 
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setValue(name, value);
+  };
+
   const bodyContent = (
     <Box component={"form"} display="flex" flexDirection="column" gap={3}>
       <Input
@@ -65,6 +71,18 @@ const Profile: React.FC<TProps> = ({ currentUser }) => {
         register={register}
         errors={errors}
         required
+        value={currentUser?.name}
+        onChange={handleInputChange}
+      />
+      <Input
+        id="university"
+        label="大学学部学科"
+        disabled={loading}
+        register={register}
+        errors={errors}
+        required
+        value={currentUser?.university}
+        onChange={handleInputChange}
       />
       <Input
         id="grade"
@@ -72,47 +90,50 @@ const Profile: React.FC<TProps> = ({ currentUser }) => {
         disabled={loading}
         register={register}
         errors={errors}
+        type="number"
         required
-      />
-      <Input
-        id="university"
-        label="名前"
-        disabled={loading}
-        register={register}
-        errors={errors}
-        required
+        value={currentUser?.grade}
+        onChange={handleInputChange}
       />
       <Input
         id="universityNumber"
-        label="大学"
+        label="学籍番号"
         disabled={loading}
         register={register}
         errors={errors}
         required
-      />{" "}
-      <Input
-        id="privateEmail"
-        label="名前"
-        disabled={loading}
-        register={register}
-        errors={errors}
-        required
+        value={currentUser?.universityNumber}
+        onChange={handleInputChange}
       />
       <Input
-        id="universityEmail"
-        label="学年"
+        id="email"
+        label="メールアドレス"
         disabled={loading}
         register={register}
         errors={errors}
         required
+        value={currentUser?.privateEmail}
+        onChange={handleInputChange}
+      />
+      <Input
+        id="universityMail"
+        label="大学用メールアドレス"
+        disabled={loading}
+        register={register}
+        errors={errors}
+        required
+        value={currentUser?.universityEmail}
+        onChange={handleInputChange}
       />
       <Input
         id="phoneNumber"
-        label="学年"
+        label="電話番号"
         disabled={loading}
         register={register}
         errors={errors}
         required
+        value={currentUser?.phoneNumber}
+        onChange={handleInputChange}
       />
     </Box>
   );
