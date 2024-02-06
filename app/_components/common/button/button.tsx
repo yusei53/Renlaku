@@ -1,4 +1,4 @@
-import { Box, Button as MuiButton } from "@mui/material";
+import { Box, Button as MuiButton, SxProps } from "@mui/material";
 import { IconType } from "react-icons";
 
 type TProps = {
@@ -8,14 +8,21 @@ type TProps = {
   outline?: boolean;
   del?: boolean;
   icon?: IconType;
+  sx?: SxProps;
 };
 
-const Button: React.FC<TProps> = ({ label, onClick, disabled, icon: Icon }) => {
+const Button: React.FC<TProps> = ({
+  label,
+  onClick,
+  disabled,
+  icon: Icon,
+  sx,
+}) => {
   return (
     <MuiButton
       disabled={disabled}
       onClick={onClick}
-      sx={{ position: "relative" }}
+      sx={{ position: "relative", ...sx }}
     >
       {Icon && (
         <Box position={"absolute"} left={4}>
