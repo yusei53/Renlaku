@@ -7,7 +7,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import ProfilePage from "./profilePage";
 import { User } from "@prisma/client";
-import { Input } from "../_components/common/input/input";
+import Input from "../_components/common/input/input";
 
 type TProps = {
   currentUser: User | null;
@@ -63,7 +63,13 @@ const Profile: React.FC<TProps> = ({ currentUser }) => {
   };
 
   const bodyContent = (
-    <Box component={"form"} display="flex" flexDirection="column" gap={3}>
+    <Box
+      component={"form"}
+      display="flex"
+      flexDirection="column"
+      gap={3.5}
+      py={5}
+    >
       <Input
         id="name"
         label="名前"
@@ -106,7 +112,7 @@ const Profile: React.FC<TProps> = ({ currentUser }) => {
         onChange={handleInputChange}
       />
       <Input
-        id="email"
+        id="privateEmail"
         label="メールアドレス"
         disabled={loading}
         register={register}
@@ -116,7 +122,7 @@ const Profile: React.FC<TProps> = ({ currentUser }) => {
         onChange={handleInputChange}
       />
       <Input
-        id="universityMail"
+        id="universityEmail"
         label="大学用メールアドレス"
         disabled={loading}
         register={register}

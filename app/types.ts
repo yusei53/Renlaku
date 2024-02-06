@@ -13,7 +13,7 @@ export type UserDataType = {
   date: string | null;
   time: string | null;
   lesson: string | null;
-  id: string | null;
-  mail: string | null;
-  number: string | null;
+  universityNumber: string | null;
+  universityEmail: string | null;
+  phoneNumber: string | null;
 };

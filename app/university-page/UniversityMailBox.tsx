@@ -23,9 +23,9 @@ const UniversityMailBox: React.FC<InputComponentProps> = ({ userData }) => (
       date={userData.date || "{ 日付 }"}
       time={userData.time || "{ 何限目 }"}
       lesson={userData.lesson || "{ 講義名 }"}
-      id={userData.id || "{ 学籍番号 }"}
-      mail={userData.mail || "{ メールアドレス }"}
-      number={userData.number || "{ 電話番号 }"}
+      universityNumber={userData.universityNumber || "{ 学籍番号 }"}
+      universityEmail={userData.universityEmail || "{ メールアドレス }"}
+      number={userData.phoneNumber || "{ 電話番号 }"}
     />
   </Box>
 );

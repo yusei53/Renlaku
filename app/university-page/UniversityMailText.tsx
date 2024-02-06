@@ -9,8 +9,8 @@ type TProps = {
   date: string;
   time: string;
   lesson: string;
-  id: string;
-  mail: string;
+  universityNumber: string;
+  universityEmail: string;
   number: string;
 };
 
@@ -23,8 +23,8 @@ const UniversityMailText: React.FC<TProps> = ({
   date,
   time,
   lesson,
-  id,
-  mail,
+  universityNumber,
+  universityEmail,
   number,
 }) => {
   return (
@@ -48,9 +48,9 @@ const UniversityMailText: React.FC<TProps> = ({
       <br />
       {university} {grade}年
       <br />
-      学籍番号 : {id}
+      学籍番号 : {universityNumber}
       <br />
-      メールアドレス : {mail}
+      メールアドレス : {universityEmail}
       <br />
       電話番号 : {number}
       <br />

@@ -1,20 +1,9 @@
 import { User } from "@prisma/client";
 import { useEffect, useState } from "react";
+import { UserDataType } from "../types";
 
 const useUserData = (currentUser: User | null) => {
-  const [userData, setUserData] = useState<{
-    name: string | null;
-    university: string | null;
-    teacher: string | null;
-    grade: string | null;
-    reasonText: string | null;
-    date: string | null;
-    time: string | null;
-    lesson: string | null;
-    id: string | null;
-    mail: string | null;
-    number: string | null;
-  }>({
+  const [userData, setUserData] = useState<UserDataType>({
     name: null,
     university: null,
     teacher: null,
@@ -23,9 +12,9 @@ const useUserData = (currentUser: User | null) => {
     date: null,
     time: null,
     lesson: null,
-    id: null,
-    mail: null,
-    number: null,
+    universityNumber: null,
+    universityEmail: null,
+    phoneNumber: null,
   });
 
   useEffect(() => {
@@ -39,9 +28,9 @@ const useUserData = (currentUser: User | null) => {
         date: currentUser.date,
         time: currentUser.time,
         lesson: currentUser.lesson,
-        id: currentUser.id,
-        mail: currentUser.mail,
-        number: currentUser.number,
+        universityNumber: currentUser.universityNumber,
+        universityEmail: currentUser.universityEmail,
+        phoneNumber: currentUser.phoneNumber,
       });
     }
   }, [currentUser]);

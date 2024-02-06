@@ -13,7 +13,7 @@ type TProps = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const Input: React.FC<TProps> = ({
+const Input: React.FC<TProps> = ({
   id,
   label,
   type = "text",
@@ -35,6 +35,7 @@ export const Input: React.FC<TProps> = ({
       error={errors[id]}
       helperText={errors[id]?.message}
       onChange={onChange}
+      size="small"
     />
   );
 };
