@@ -102,7 +102,6 @@ const SignupModal = () => {
           width: "100%",
           color: "black",
           border: "1px solid #c4c4c4",
-          fontWeight: "bold",
         }}
       />
       <Box mt={5} mb={3}>
