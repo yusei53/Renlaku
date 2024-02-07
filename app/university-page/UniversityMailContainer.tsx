@@ -1,17 +1,34 @@
 "use client";
-import { Container, Grid } from "@mui/material";
 import { User } from "@prisma/client";
-import useUserData from "../hooks/useUserData";
-import UniversityMailBox from "./UniversityMailBox";
+
+import { UserDataType } from "../types";
+
+import { Container, Grid } from "@mui/material";
 import InputBox from "./InputBox";
+import UniversityMailBox from "./UniversityMailBox";
+import useUserData from "../hooks/useUserData";
 
-type TProps = {
-  currentUser: User | null;
-};
+const UniversityMailContainer: React.FC<{ currentUser: User | null }> = ({
+  currentUser,
+}) => {
+  const defaultUserData: UserDataType = {
+    name: null,
+    university: null,
+    teacher: null,
+    grade: null,
+    reasonText: null,
+    date: null,
+    time: null,
+    lesson: null,
+    universityNumber: null,
+    universityEmail: null,
+    phoneNumber: null,
+  };
 
-const UniversityMailContainer: React.FC<TProps> = ({ currentUser }) => {
-  const { userData, updateUserData } = useUserData(currentUser);
-
+  const { userData, updateUserData } = useUserData<UserDataType>(
+    defaultUserData,
+    currentUser
+  );
   return (
     <Container disableGutters sx={{ my: 5 }}>
       <Grid container>

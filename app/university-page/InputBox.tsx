@@ -13,7 +13,7 @@ import CustomSelect from "./CustomSelect";
 
 type TProps = {
   userData: UserDataType;
-  updateUserData: (field: string, value: string) => void;
+  updateUserData: (field: keyof UserDataType, value: string) => void;
 };
 
 const InputBox: React.FC<TProps> = ({ userData, updateUserData }) => {
@@ -109,7 +109,7 @@ const InputBox: React.FC<TProps> = ({ userData, updateUserData }) => {
             <CustomInput
               label={"電話番号"}
               value={userData.phoneNumber}
-              onChange={(e) => updateUserData("number", e.target.value)}
+              onChange={(e) => updateUserData("phoneNumber", e.target.value)}
               fullWidth
             />
           </Grid>
