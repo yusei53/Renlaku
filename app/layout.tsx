@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import AuthContext from "./_components/context/authContext";
 import ToasterContext from "./_components/context/toasterContext";
-import SignupModal from "./_components/common/modals/signupModal";
-import LoginModal from "./_components/common/modals/loginModal";
 import getCurrentUser from "./actions/getCurrentUser";
 import { Header } from "./_components/common/header";
-
-const inter = Inter({ subsets: ["latin"] });
+import SignupModal from "./_components/common/modals/SignupModal";
+import LoginModal from "./_components/common/modals/LoginModal";
 
 export const metadata: Metadata = {
   title: "Create Next App",

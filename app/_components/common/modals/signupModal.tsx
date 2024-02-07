@@ -13,7 +13,7 @@ import Button from "../button/button";
 import { FcGoogle } from "react-icons/fc";
 import useSignupModal from "@/app/hooks/useSignupModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
-import Modal from "./modal";
+import Modal from "./Modal";
 
 const schema = z.object({
   email: z.string().email({ message: "メールアドレスの形式ではありません" }),
@@ -102,7 +102,6 @@ const SignupModal = () => {
           width: "100%",
           color: "black",
           border: "1px solid #c4c4c4",
-          fontWeight: "bold",
         }}
       />
       <Box mt={5} mb={3}>

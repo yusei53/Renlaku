@@ -4,6 +4,7 @@ type TProps = {
   label: string;
   value: string | null;
   type?: string;
+  fullWidth?: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
@@ -11,6 +12,7 @@ const CustomInput: React.FC<TProps> = ({
   label,
   value,
   type = "text",
+  fullWidth,
   onChange,
 }) => {
   return (
@@ -20,6 +22,7 @@ const CustomInput: React.FC<TProps> = ({
       label={label}
       value={value || ""}
       onChange={onChange}
+      fullWidth={fullWidth}
     />
   );
 };

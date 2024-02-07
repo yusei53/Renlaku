@@ -12,6 +12,7 @@ const UniversityMailBox: React.FC<InputComponentProps> = ({ userData }) => (
     alignItems={"center"}
     justifyContent={"center"}
     mx={2}
+    mt={1}
     bgcolor={"#D7EEFF"}
   >
     <UniversityMailText

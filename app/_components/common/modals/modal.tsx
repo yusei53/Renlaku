@@ -51,13 +51,7 @@ const Modal: React.FC<TProps> = ({
       <Box p={2}>
         <IoMdClose size={20} onClick={handleClose} />
         <Box textAlign={"center"}>
-          <Typography
-            component="h2"
-            fontSize={20}
-            pt={1}
-            pb={2}
-            fontWeight={"bold"}
-          >
+          <Typography component="h2" fontSize={20} pt={1} pb={2}>
             {title}
           </Typography>
           <Box px={{ xs: 2, md: 3 }}>
