@@ -59,7 +59,7 @@ const SignupModal = () => {
         });
 
         signupModal.onClose();
-        router.push("/test2");
+        router.push("/university-page");
         router.refresh();
       }
     } catch (error) {
@@ -92,18 +92,28 @@ const SignupModal = () => {
   );
 
   const footerContent = (
-    <Box display="flex" flexDirection="column" gap={3} mt={2}>
+    <Box gap={3}>
       {/* Googleログイン */}
       <Button
         label="Googleでログイン"
         icon={FcGoogle}
         onClick={() => signIn("google")}
+        sx={{
+          width: "100%",
+          color: "black",
+          border: "1px solid #c4c4c4",
+          fontWeight: "bold",
+        }}
       />
-
-      <Box mt={4} textAlign={"center"}>
+      <Box mt={5} mb={3}>
         <Typography
+          fontSize={14}
           onClick={onToggle}
-          sx={{ cursor: "pointer", "&:hover": { textDecoration: "underline" } }}
+          sx={{
+            cursor: "pointer",
+            textDecoration: "underline",
+            "&:hover": { color: "#006ee1" },
+          }}
         >
           すでにアカウントを作成済みの方はこちら
         </Typography>
