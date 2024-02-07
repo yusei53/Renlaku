@@ -8,11 +8,11 @@ import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { z } from "zod";
-import Modal from "./modal";
 import { Box, Typography } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
 import Button from "../button/button";
 import Input from "../input/input";
+import Modal from "./Modal";
 
 const schema = z.object({
   email: z.string().email({ message: "メールアドレスの形式ではありません" }),
