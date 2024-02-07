@@ -22,11 +22,16 @@ const Button: React.FC<TProps> = ({
     <MuiButton
       disabled={disabled}
       onClick={onClick}
-      sx={{ position: "relative", ...sx }}
+      sx={{ position: "relative", textTransform: "none", fontSize: 15, ...sx }}
     >
       {Icon && (
-        <Box position={"absolute"} left={4}>
-          <Icon size={24}></Icon>
+        <Box
+          display={"flex"}
+          alignItems={"center"}
+          position={"absolute"}
+          left={{ xs: 25, sm: 75 }}
+        >
+          <Icon size={25}></Icon>
         </Box>
       )}
       {label}
