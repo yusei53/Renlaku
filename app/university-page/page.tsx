@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box } from "@mui/material/index";
 import getCurrentUser from "../actions/getCurrentUser";
 import FirstView from "./FirstView";
 import UniversityMailContainer from "./UniversityMailContainer";
