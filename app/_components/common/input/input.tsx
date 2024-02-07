@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { SxProps, TextField } from "@mui/material";
 import { FieldValues, UseFormRegister } from "react-hook-form";
 
 type TProps = {
@@ -11,6 +11,7 @@ type TProps = {
   register: UseFormRegister<FieldValues>;
   errors: any;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  sx?: SxProps;
 };
 
 const Input: React.FC<TProps> = ({

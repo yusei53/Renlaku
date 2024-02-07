@@ -38,8 +38,8 @@ const LoginModal = () => {
   });
 
   const onToggle = useCallback(() => {
-    loginModal.onOpen();
-    signupModal.onClose();
+    loginModal.onClose();
+    signupModal.onOpen();
   }, [loginModal, signupModal]);
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
@@ -59,7 +59,7 @@ const LoginModal = () => {
 
       toast.success("ログインしました");
       loginModal.onClose();
-      router.push("/test2");
+      router.push("/university-page");
       router.refresh();
     } catch (error) {
       toast.error("エラーが発生しました" + error);
@@ -77,6 +77,7 @@ const LoginModal = () => {
         register={register}
         errors={errors}
         required
+        sx={{ m: 1 }}
       />
       <Input
         id="password"
@@ -86,25 +87,35 @@ const LoginModal = () => {
         register={register}
         errors={errors}
         required
+        sx={{ m: 1 }}
       />
     </Box>
   );
 
   const footerContent = (
-    <Box display="flex" flexDirection="column" gap={3} mt={2}>
+    <Box gap={3}>
       {/* Googleログイン */}
       <Button
         label="Googleでログイン"
         icon={FcGoogle}
         onClick={() => signIn("google")}
+        sx={{
+          width: "100%",
+          color: "black",
+          border: "1px solid #c4c4c4",
+        }}
       />
-
-      <Box mt={4} textAlign={"center"}>
+      <Box mt={5} mb={3}>
         <Typography
+          fontSize={14}
           onClick={onToggle}
-          sx={{ cursor: "pointer", "&:hover": { textDecoration: "underline" } }}
+          sx={{
+            cursor: "pointer",
+            textDecoration: "underline",
+            "&:hover": { color: "#006ee1" },
+          }}
         >
-          すでにアカウントを作成済みの方はこちら
+          アカウントをお持ちでない方はこちら
         </Typography>
       </Box>
     </Box>

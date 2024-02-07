@@ -3,6 +3,7 @@ import { Box, Typography, Dialog } from "@mui/material";
 import { useCallback } from "react";
 import { IoMdClose } from "react-icons/io";
 import Button from "../button/button";
+import CustomDivider from "./CustomDivider";
 
 type TProps = {
   isOpen?: boolean;
@@ -46,20 +47,38 @@ const Modal: React.FC<TProps> = ({
   }
 
   return (
-    <Dialog open fullWidth>
-      <Box>
+    <Dialog open fullWidth maxWidth={"xs"}>
+      <Box p={2}>
         <IoMdClose size={20} onClick={handleClose} />
-        <Typography component="h2">{title}</Typography>
-        <Box>{body}</Box>
-        <Box>
-          <Button
-            disabled={disabled}
-            label={primaryLabel}
-            onClick={handleSubmit}
-            del={del}
-          />
+        <Box textAlign={"center"}>
+          <Typography
+            component="h2"
+            fontSize={20}
+            pt={1}
+            pb={2}
+            fontWeight={"bold"}
+          >
+            {title}
+          </Typography>
+          <Box px={{ xs: 2, md: 3 }}>
+            <Box py={3}>{body}</Box>
+            <Box>
+              <Button
+                disabled={disabled}
+                label={primaryLabel}
+                onClick={handleSubmit}
+                sx={{
+                  width: "100%",
+                  bgcolor: "#006EE2",
+                  color: "white",
+                  "&:hover": { bgcolor: "#0067c0" },
+                }}
+              />
+            </Box>
+            <CustomDivider content="または" />
+            <Box>{footer}</Box>
+          </Box>
         </Box>
-        <Box>{footer}</Box>
       </Box>
     </Dialog>
   );
