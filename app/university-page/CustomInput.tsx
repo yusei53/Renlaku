@@ -18,11 +18,11 @@ const CustomInput: React.FC<TProps> = ({
   return (
     <TextField
       type={type}
-      size="small"
-      label={label}
       value={value || ""}
+      label={label}
       onChange={onChange}
       fullWidth={fullWidth}
+      size="small"
     />
   );
 };
