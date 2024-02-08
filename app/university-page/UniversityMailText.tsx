@@ -1,20 +1,7 @@
 import { Typography } from "@mui/material";
+import { UserDataType } from "../types";
 
-type TProps = {
-  teacher: string;
-  university: string;
-  grade: string;
-  name: string;
-  reasonText: string;
-  date: string;
-  time: string;
-  lesson: string;
-  universityNumber: string;
-  universityEmail: string;
-  number: string;
-};
-
-const UniversityMailText: React.FC<TProps> = ({
+const UniversityMailText: React.FC<UserDataType> = ({
   teacher,
   university,
   grade,
@@ -25,7 +12,7 @@ const UniversityMailText: React.FC<TProps> = ({
   lesson,
   universityNumber,
   universityEmail,
-  number,
+  phoneNumber,
 }) => {
   return (
     <Typography p={{ xs: 4, sm: 6 }} fontSize={{ xs: "15px", sm: "16px" }}>
@@ -52,7 +39,7 @@ const UniversityMailText: React.FC<TProps> = ({
       <br />
       メールアドレス : {universityEmail}
       <br />
-      電話番号 : {number}
+      電話番号 : {phoneNumber}
       <br />
       -------------------------------------------
     </Typography>
