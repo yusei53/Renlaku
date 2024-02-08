@@ -1,8 +1,6 @@
 "use client";
 import { User } from "@prisma/client";
-
 import { UserDataType } from "../types";
-
 import { Container, Grid } from "@mui/material";
 import InputBox from "./InputBox";
 import UniversityMailBox from "./UniversityMailBox";
