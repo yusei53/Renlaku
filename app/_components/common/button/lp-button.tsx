@@ -6,7 +6,7 @@ type TProps = {
   bgColor?: string;
   color?: string;
   hover?: boolean;
-  props?: BoxProps;
+  sx?: BoxProps;
 };
 
 const LpButton: React.FC<TProps> = ({
@@ -15,7 +15,7 @@ const LpButton: React.FC<TProps> = ({
   bgColor = "#ff5e00",
   color = "white",
   hover = false,
-  props,
+  sx,
 }) => {
   return (
     <Box
@@ -36,7 +36,7 @@ const LpButton: React.FC<TProps> = ({
         },
       }}
       onClick={onClick}
-      {...props}
+      {...sx}
     >
       {label}
     </Box>
