@@ -57,7 +57,7 @@ export const OnboardingContainer = () => {
         <Box pt={3}>
           <LpButton
             label="まずは使ってみる"
-            onClick={() => router.push("/university-page")}
+            onClick={() => router.push("/skip-class")}
             hover
             sx={{ ...styledButton }}
           />

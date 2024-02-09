@@ -59,7 +59,7 @@ const SignupModal = () => {
         });
 
         signupModal.onClose();
-        router.push("/university-page");
+        router.push("/skip-class");
         router.refresh();
       }
     } catch (error) {
