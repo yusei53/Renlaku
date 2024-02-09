@@ -8,10 +8,12 @@ import {
 } from "@mui/material";
 import SettingGridCard from "./setting-grid-card";
 import LpButton from "../../common/button/lp-button";
+import useSignupModal from "@/app/_feature/hooks/useSignupModal";
 
 export const SettingContainer = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const signupModal = useSignupModal();
 
   return (
     <Container>
@@ -65,21 +67,23 @@ export const SettingContainer = () => {
         <SettingGridCard />
         <LpButton
           label="新規登録 / ログイン"
-          onClick={() => {}}
+          onClick={() => signupModal.onOpen()}
           hover
-          props={{
-            fontSize: { xs: "16px", sm: "18px" },
-            p: { xs: "12px", sm: "15px" },
-            fontWeight: "bold",
-            borderRadius: 2,
-            mx: { xs: 5, sm: 20, md: 30, lg: "350px" },
-            mt: 3,
-            mb: 5,
-          }}
+          sx={{ ...styledButton }}
         />
       </Box>
     </Container>
   );
+};
+
+const styledButton = {
+  fontSize: { xs: "16px", sm: "18px" },
+  p: { xs: "12px", sm: "15px" },
+  fontWeight: "bold",
+  borderRadius: 2,
+  mx: { xs: 5, sm: 20, md: 30, lg: "350px" },
+  mt: 3,
+  mb: 5,
 };
 
 const Container = styled("div")(({ theme }) => ({

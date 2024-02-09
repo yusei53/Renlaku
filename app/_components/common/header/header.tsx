@@ -1,11 +1,12 @@
 "use client";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import { User } from "@prisma/client";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import useSignupModal from "@/app/_feature/hooks/useSignupModal";
 import useLoginModal from "@/app/_feature/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import LpButton from "../button/lp-button";
+import { useRouter } from "next/navigation";
 
 type TProps = {
   currentUser: User | null;
@@ -15,9 +16,10 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
   const signupModal = useSignupModal();
   const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "white", p: 0.5 }}>
+    <AppBar position="static" color="inherit" sx={{ p: 0.5 }}>
       <Toolbar>
         <Typography flexGrow={1} color={"black"} fontSize={"1.8rem"}>
           Renlaku
@@ -25,17 +27,17 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
         <LpButton
           bgColor="white"
           color="black"
-          props={{
-            display: { xs: "none", sm: "none", md: "block" },
+          sx={{
+            display: { xs: "none", md: "block" },
           }}
-          onClick={() => {}}
+          onClick={() => router.push("/")}
           label="サービスについて"
         />
         {currentUser ? (
           <LpButton
             bgColor="white"
             color="black"
-            props={{
+            sx={{
               display: { xs: "none", sm: "block" },
             }}
             onClick={() => {
@@ -45,11 +47,11 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
             label="ログアウト"
           />
         ) : (
-          <Fragment>
+          <>
             <LpButton
               bgColor="white"
               color="black"
-              props={{
+              sx={{
                 display: { xs: "none", sm: "block" },
               }}
               onClick={() => {
@@ -61,7 +63,7 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
             <LpButton
               bgColor="white"
               color="black"
-              props={{
+              sx={{
                 display: { xs: "none", sm: "block" },
               }}
               onClick={() => {
@@ -70,13 +72,13 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
               }}
               label="新規登録"
             />
-          </Fragment>
+          </>
         )}
         <LpButton
           label="まずは使ってみる"
-          onClick={() => {}}
+          onClick={() => router.push("/university-page")}
           hover
-          props={{
+          sx={{
             m: { xs: "12px 0", sm: "12px" },
           }}
         />

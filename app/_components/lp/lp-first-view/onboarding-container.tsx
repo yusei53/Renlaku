@@ -8,11 +8,14 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import LpButton from "../../common/button/lp-button";
+import { useRouter } from "next/navigation";
+import useSignupModal from "@/app/_feature/hooks/useSignupModal";
 
 export const OnboardingContainer = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-
+  const router = useRouter();
+  const signupModal = useSignupModal();
   return (
     <Container>
       <Box mb={4}>
@@ -33,26 +36,10 @@ export const OnboardingContainer = () => {
             "時間を節約したい、忙しい学生のためのメールアシスタント"
           )}
         </Typography>
-        <Typography
-          component={"h1"}
-          fontSize={{ xs: 35, sm: 45, lg: 50 }}
-          mt={3}
-          fontWeight={"bold"}
-          lineHeight={1.5}
-          color={"white"}
-          fontFamily={"monospace"}
-        >
+        <Typography mt={3} {...styledTitle}>
           メール作成が
         </Typography>
-        <Typography
-          component={"h1"}
-          fontSize={{ xs: 35, sm: 45, lg: 50 }}
-          fontWeight={"bold"}
-          lineHeight={1.5}
-          color={"white"}
-          fontFamily={"monospace"}
-          mb={7}
-        >
+        <Typography mb={7} {...styledTitle}>
           これまでになく簡単に
         </Typography>
         <Typography
@@ -70,31 +57,37 @@ export const OnboardingContainer = () => {
         <Box pt={3}>
           <LpButton
             label="まずは使ってみる"
-            onClick={() => {}}
+            onClick={() => router.push("/university-page")}
             hover
-            props={{
-              fontSize: { xs: "14px", sm: "18px", lg: "20px" },
-              p: { xs: "12px 15px", sm: "14px 28px", lg: "15px 30px" },
-              fontWeight: "bold",
-              borderRadius: 2,
-            }}
+            sx={{ ...styledButton }}
           />
           <LpButton
             label="新規登録 / ログイン"
-            onClick={() => {}}
+            onClick={() => signupModal.onOpen()}
             hover
-            props={{
-              fontSize: { xs: "14px", sm: "18px", lg: "20px" },
-              p: { xs: "12px 15px", sm: "14px 28px", lg: "15px 30px" },
-              fontWeight: "bold",
-              borderRadius: 2,
-            }}
+            sx={{ ...styledButton }}
           />
         </Box>
       </Box>
       <ResponsiveImage src="/pc.png" alt={"test"} height={450} width={490} />
     </Container>
   );
+};
+
+const styledTitle = {
+  components: "h1",
+  fontSize: { xs: 35, sm: 45, lg: 50 },
+  fontWeight: "bold",
+  lineHeight: 1.5,
+  color: "white",
+  fontFamily: "monospace",
+};
+
+const styledButton = {
+  fontSize: { xs: "14px", sm: "18px", lg: "20px" },
+  p: { xs: "12px 15px", sm: "14px 28px", lg: "15px 30px" },
+  fontWeight: "bold",
+  borderRadius: 2,
 };
 
 const Container = styled("div")(({ theme }) => ({
