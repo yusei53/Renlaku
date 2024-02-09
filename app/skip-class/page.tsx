@@ -1,9 +1,9 @@
 import { Box } from "@mui/material/index";
 import getCurrentUser from "../_feature/actions/getCurrentUser";
-import UniversityMailContainer from "../_components/university-page/university-mail-container";
-import UniversityFirstView from "../_components/university-page/university-firstview";
+import UniversityMailContainer from "../_components/skip-class/university-mail-container";
+import UniversityFirstView from "../_components/skip-class/university-firstview";
 
-const Page = async () => {
+const SkipClassPage = async () => {
   const currentUser = await getCurrentUser();
   return (
     <Box>
@@ -13,4 +13,4 @@ const Page = async () => {
   );
 };
 
-export default Page;
+export default SkipClassPage;

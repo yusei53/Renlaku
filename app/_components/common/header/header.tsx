@@ -76,7 +76,7 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
         )}
         <LpButton
           label="まずは使ってみる"
-          onClick={() => router.push("/university-page")}
+          onClick={() => router.push("/skip-class")}
           hover
           sx={{
             m: { xs: "12px 0", sm: "12px" },
