@@ -1,15 +1,15 @@
 import { Box } from "@mui/material/index";
-import getCurrentUser from "../actions/getCurrentUser";
-import Profile from "./profile";
+import getCurrentUser from "../_feature/actions/getCurrentUser";
+import ProfileContainer from "../_components/profile/profile-container";
 
-export const Test = async () => {
+export const ProfilePage = async () => {
   const currentUser = await getCurrentUser();
 
   return (
     <Box>
-      <Profile currentUser={currentUser} />
+      <ProfileContainer currentUser={currentUser} />
     </Box>
   );
 };
 
-export default Test;
+export default ProfilePage;

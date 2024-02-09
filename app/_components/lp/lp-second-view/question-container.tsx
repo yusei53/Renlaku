@@ -2,7 +2,7 @@
 import { Typography, styled } from "@mui/material";
 import QuestionBar from "./question-bar";
 
-export const LpQuestionContainer = () => {
+export const QuestionContainer = () => {
   return (
     <Container>
       <Typography
