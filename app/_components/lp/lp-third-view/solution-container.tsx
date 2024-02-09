@@ -81,19 +81,20 @@ export const SolutionContainer = () => {
           label="新規登録 / ログイン"
           onClick={() => {}}
           hover
-          props={{
-            fontSize: { xs: "16px", sm: "18px" },
-            p: { xs: "12px", sm: "14px", lg: "15px" },
-            fontWeight: "bold",
-            borderRadius: 2,
-            mx: { xs: 5, sm: 20, md: 30, lg: "350px" },
-
-            mb: 5,
-          }}
+          sx={{ ...styledButton }}
         />
       </Box>
     </Container>
   );
+};
+
+const styledButton = {
+  fontSize: { xs: "16px", sm: "18px" },
+  p: { xs: "12px", sm: "14px", lg: "15px" },
+  fontWeight: "bold",
+  borderRadius: 2,
+  mx: { xs: 5, sm: 20, md: 30, lg: "350px" },
+  mb: 5,
 };
 
 const Container = styled("div")(({ theme }) => ({

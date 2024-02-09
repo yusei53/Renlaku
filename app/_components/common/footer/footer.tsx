@@ -1,5 +1,4 @@
 "use client";
-import * as React from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
@@ -23,19 +22,14 @@ export const Footer = () => {
             flexDirection={"column"}
             justifyContent={"center"}
           >
-            <Typography variant="h6" color="text.primary" gutterBottom>
+            <Typography color="text.primary" gutterBottom>
               Renlaku
             </Typography>
-            <Link
-              href="https://reflective-pruner-e9d.notion.site/Peach-Tech-8b95c7af52964bd78c2fc266a8b74d95"
-              color="text.secondary"
-              underline="hover"
-              py={1}
-            >
+            <Link href="/" color="text.secondary" underline="hover" py={1}>
               Renlakuとは
             </Link>
             <Link
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfpyylZgbat94X48ovHLqeLyXQNB8tRuCEoKKKT9f4fmW-wSg/viewform"
+              href="https://twitter.com/yuseidayo53"
               color="text.secondary"
               underline="hover"
             >
