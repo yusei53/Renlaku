@@ -2,10 +2,10 @@
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import { User } from "@prisma/client";
 import { Fragment, useState } from "react";
-import useSignupModal from "@/app/hooks/useSignupModal";
-import useLoginModal from "@/app/hooks/useLoginModal";
+import useSignupModal from "@/app/_feature/hooks/useSignupModal";
+import useLoginModal from "@/app/_feature/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
-import LpButton from "../menu/LpButton";
+import LpButton from "../button/lp-button";
 
 type TProps = {
   currentUser: User | null;

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import AuthContext from "./_components/context/authContext";
-import ToasterContext from "./_components/context/toasterContext";
-import getCurrentUser from "./actions/getCurrentUser";
+import AuthContext from "./_components/context/auth-context";
+import ToasterContext from "./_components/context/toaster-context";
+import getCurrentUser from "./_feature/actions/getCurrentUser";
 import { Header } from "./_components/common/header";
-import SignupModal from "./_components/common/modals/SignupModal";
-import LoginModal from "./_components/common/modals/LoginModal";
+import SignupModal from "./_components/common/modals/signup-modal";
+import LoginModal from "./_components/common/modals/login-modal";
+import { Footer } from "./_components/common/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -27,6 +28,7 @@ export default async function RootLayout({
           <LoginModal />
           <Header currentUser={currentUser} />
           {children}
+          <Footer />
         </AuthContext>
       </body>
     </html>

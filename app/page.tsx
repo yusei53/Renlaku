@@ -1,24 +1,20 @@
-import { Fragment } from "react";
-import getCurrentUser from "./actions/getCurrentUser";
-import { Onboarding } from "./_components/common/onBoarding";
-import { Question } from "./_components/common/question";
-import { Solution } from "./_components/common/solution";
-import { Service } from "./_components/common/service";
-import { Setting } from "./_components/common/setting";
-import { Footer } from "./_components/common/footer";
+import getCurrentUser from "./_feature/actions/getCurrentUser";
+import { OnboardingContainer } from "./_components/lp/lp-first-view";
+import { QuestionContainer } from "./_components/lp/lp-second-view";
+import { SolutionContainer } from "./_components/lp/lp-third-view";
+import { ServiceContainer } from "./_components/lp/lp-fourth-view";
+import { SettingContainer } from "./_components/lp/lp-fifth-view";
 
 const Home = async () => {
   const currentUser = await getCurrentUser();
   return (
-    <Fragment>
-      <Onboarding />
-      <Question />
-      <Solution />
-      <Service />
-      <Setting />
-      <Footer />
-      {currentUser ? <div>認証中</div> : <div>未認証</div>}
-    </Fragment>
+    <>
+      <OnboardingContainer />
+      <QuestionContainer />
+      <SolutionContainer />
+      <ServiceContainer />
+      <SettingContainer />
+    </>
   );
 };
 

@@ -1,13 +1,13 @@
-import { Box } from "@mui/material";
-import getCurrentUser from "../actions/getCurrentUser";
-import FirstView from "./FirstView";
-import UniversityMailContainer from "./UniversityMailContainer";
+import { Box } from "@mui/material/index";
+import getCurrentUser from "../_feature/actions/getCurrentUser";
+import UniversityMailContainer from "../_components/university-page/university-mail-container";
+import UniversityFirstView from "../_components/university-page/university-firstview";
 
 const Page = async () => {
   const currentUser = await getCurrentUser();
   return (
     <Box>
-      <FirstView currentUser={currentUser} />
+      <UniversityFirstView currentUser={currentUser} />
       <UniversityMailContainer currentUser={currentUser} />
     </Box>
   );
