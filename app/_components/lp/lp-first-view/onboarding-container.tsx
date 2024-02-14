@@ -16,6 +16,7 @@ export const OnboardingContainer = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const router = useRouter();
   const signupModal = useSignupModal();
+
   return (
     <Container>
       <Box mb={4}>

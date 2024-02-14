@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
-import { UserDataType } from "../../_feature/types/types";
+import { SkipClassUserType } from "../../_feature/types/types";
 
-const UniversityMailText: React.FC<UserDataType> = ({
+const UniversityMailText: React.FC<SkipClassUserType> = ({
   teacher,
   university,
   grade,
@@ -29,7 +29,7 @@ const UniversityMailText: React.FC<UserDataType> = ({
       お手数おかけしますが、どうぞ宜しくお願い致します。
       <br />
       <br />
-      -------------------------------------------
+      ------------------------------------------------------
       <br />
       {name}
       <br />
@@ -41,7 +41,7 @@ const UniversityMailText: React.FC<UserDataType> = ({
       <br />
       電話番号 : {phoneNumber}
       <br />
-      -------------------------------------------
+      ------------------------------------------------------
     </Typography>
   );
 };

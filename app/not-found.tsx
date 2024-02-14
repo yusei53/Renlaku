@@ -1,4 +1,4 @@
-import { Container, Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 
 const NotFound = () => {
   return (

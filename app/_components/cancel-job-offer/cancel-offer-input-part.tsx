@@ -6,25 +6,25 @@ import {
   InputLabel,
   MenuItem,
 } from "@mui/material";
-import { SkipClassUserType } from "../../_feature/types/types";
+import { CancelJobOfferUserType } from "../../_feature/types/types";
 import CustomInput from "../common/input/custom-input";
-import { skipClassReasons } from "../../_feature/const/document-data";
+import { cancelOfferReasons } from "../../_feature/const/document-data";
 import CustomSelect from "../common/input/custom-select";
 import ResponsiveInputMessage from "../common/message/responsive-input-message";
 
 type TProps = {
-  userData: SkipClassUserType;
-  updateUserData: (field: keyof SkipClassUserType, value: string) => void;
+  userData: CancelJobOfferUserType;
+  updateUserData: (field: keyof CancelJobOfferUserType, value: string) => void;
 };
 
-const UniversityInputPart: React.FC<TProps> = ({
+const CancelOfferInputPart: React.FC<TProps> = ({
   userData,
   updateUserData,
 }) => {
   return (
-    <Box textAlign={"center"} mt={{ sm: 1 }}>
+    <Box textAlign={"center"} mt={{ sm: 5 }}>
       <Box>
-        <Typography pb={"4%"}>step1. 欠席理由を選択してね！</Typography>
+        <Typography pb={"4%"}>step1. 何を辞退するか選択してね！</Typography>
         <FormControl sx={{ width: "230px" }}>
           <InputLabel
             sx={{
@@ -37,7 +37,7 @@ const UniversityInputPart: React.FC<TProps> = ({
             value={userData.reasonText}
             onChange={(e) => updateUserData("reasonText", e.target.value)}
           >
-            {skipClassReasons.map((reason) => (
+            {cancelOfferReasons.map((reason) => (
               <MenuItem key={reason.value} value={reason.value}>
                 {reason.label}
               </MenuItem>
@@ -54,9 +54,18 @@ const UniversityInputPart: React.FC<TProps> = ({
         <Grid container p={1.5}>
           <Grid item xs={6} sm={6} {...SInput}>
             <CustomInput
-              label={"教授の名前"}
-              value={userData.teacher}
-              onChange={(e) => updateUserData("teacher", e.target.value)}
+              label={"会社名(株式会社〇〇)"}
+              value={userData.company}
+              onChange={(e) => updateUserData("company", e.target.value)}
+            />
+          </Grid>
+          <Grid item xs={6} sm={6} {...SInput}>
+            <CustomInput
+              label={"担当者名"}
+              value={userData.companyUserName}
+              onChange={(e) =>
+                updateUserData("companyUserName", e.target.value)
+              }
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
@@ -69,40 +78,16 @@ const UniversityInputPart: React.FC<TProps> = ({
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
             <CustomInput
-              label={"名前"}
+              label={"氏名"}
               value={userData.name}
               onChange={(e) => updateUserData("name", e.target.value)}
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
             <CustomInput
-              label={"日付"}
-              value={userData.date}
-              onChange={(e) => updateUserData("date", e.target.value)}
-            />
-          </Grid>
-          <Grid item xs={6} sm={6} {...SInput}>
-            <CustomInput
-              label={"何限目(半角数字のみ)"}
-              value={userData.time}
-              onChange={(e) => updateUserData("time", e.target.value)}
-              type="number"
-            />
-          </Grid>
-          <Grid item xs={6} sm={6} {...SInput}>
-            <CustomInput
-              label={"講義名"}
-              value={userData.lesson}
-              onChange={(e) => updateUserData("lesson", e.target.value)}
-            />
-          </Grid>
-          <Grid item xs={6} sm={6} {...SInput}>
-            <CustomInput
-              label={"学籍番号"}
-              value={userData.universityNumber}
-              onChange={(e) =>
-                updateUserData("universityNumber", e.target.value)
-              }
+              label={"メールアドレス"}
+              value={userData.privateEmail}
+              onChange={(e) => updateUserData("privateEmail", e.target.value)}
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
@@ -119,15 +104,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               onChange={(e) => updateUserData("university", e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sm={12} {...SInput}>
-            <CustomInput
-              label={"大学用メールアドレス"}
-              value={userData.universityEmail}
-              onChange={(e) =>
-                updateUserData("universityEmail", e.target.value)
-              }
-            />
-          </Grid>
         </Grid>
       </Box>
     </Box>
@@ -139,4 +115,4 @@ const SInput = {
   py: 1.3,
 };
 
-export default UniversityInputPart;
+export default CancelOfferInputPart;

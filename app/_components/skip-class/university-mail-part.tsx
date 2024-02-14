@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
-import { UserDataType } from "../../_feature/types/types";
+import { SkipClassUserType } from "../../_feature/types/types";
 import UniversityMailText from "./university-mail-text";
 
-type InputComponentProps = {
-  userData: UserDataType;
+type TProps = {
+  userData: SkipClassUserType;
 };
 
-const UniversityMailPart: React.FC<InputComponentProps> = ({ userData }) => (
+const UniversityMailPart: React.FC<TProps> = ({ userData }) => (
   <Box
     display={"flex"}
     alignItems={"center"}

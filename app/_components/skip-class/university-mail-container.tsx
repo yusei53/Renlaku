@@ -1,15 +1,17 @@
 "use client";
 import { User } from "@prisma/client";
-import { UserDataType } from "../../_feature/types/types";
+import { SkipClassUserType } from "../../_feature/types/types";
 import { Container, Grid } from "@mui/material";
 import useUserData from "../../_feature/hooks/useUserData";
 import UniversityInputPart from "./university-input-part";
 import UniversityMailPart from "./university-mail-part";
 
-const UniversityMailContainer: React.FC<{ currentUser: User | null }> = ({
-  currentUser,
-}) => {
-  const defaultUserData: UserDataType = {
+type TProps = {
+  currentUser: User | null;
+};
+
+const UniversityMailContainer: React.FC<TProps> = ({ currentUser }) => {
+  const defaultUserData: SkipClassUserType = {
     name: null,
     university: null,
     teacher: null,
@@ -23,7 +25,7 @@ const UniversityMailContainer: React.FC<{ currentUser: User | null }> = ({
     phoneNumber: null,
   };
 
-  const { userData, updateUserData } = useUserData<UserDataType>(
+  const { userData, updateUserData } = useUserData<SkipClassUserType>(
     defaultUserData,
     currentUser
   );

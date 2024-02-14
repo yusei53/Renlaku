@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function useUserData<T>(initialData: T, currentUser: T | null) {
+const useUserData = <T>(initialData: T, currentUser: T) => {
   const [userData, setUserData] = useState<T>(initialData);
 
   useEffect(() => {
@@ -14,6 +14,6 @@ function useUserData<T>(initialData: T, currentUser: T | null) {
   };
 
   return { userData, updateUserData };
-}
+};
 
 export default useUserData;
