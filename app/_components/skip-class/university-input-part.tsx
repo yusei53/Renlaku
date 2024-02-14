@@ -6,14 +6,15 @@ import {
   InputLabel,
   MenuItem,
 } from "@mui/material";
-import { UserDataType } from "../../_feature/types/types";
+import { SkipClassUserType } from "../../_feature/types/types";
 import CustomInput from "../common/input/custom-input";
-import { reasons } from "../../_feature/const/document-data";
+import { skipClassReasons } from "../../_feature/const/document-data";
 import CustomSelect from "../common/input/custom-select";
+import ResponsiveInputMessage from "../common/message/responsive-input-message";
 
 type TProps = {
-  userData: UserDataType;
-  updateUserData: (field: keyof UserDataType, value: string) => void;
+  userData: SkipClassUserType;
+  updateUserData: (field: keyof SkipClassUserType, value: string) => void;
 };
 
 const UniversityInputPart: React.FC<TProps> = ({
@@ -21,10 +22,10 @@ const UniversityInputPart: React.FC<TProps> = ({
   updateUserData,
 }) => {
   return (
-    <Box textAlign={"center"} mt={{ xs: 0, sm: 1 }}>
+    <Box textAlign={"center"} mt={{ sm: 1 }}>
       <Box>
         <Typography pb={"4%"}>step1. 欠席理由を選択してね！</Typography>
-        <FormControl sx={{ width: "200px" }}>
+        <FormControl sx={{ width: "230px" }}>
           <InputLabel
             sx={{
               mt: "-8px",
@@ -36,7 +37,7 @@ const UniversityInputPart: React.FC<TProps> = ({
             value={userData.reasonText}
             onChange={(e) => updateUserData("reasonText", e.target.value)}
           >
-            {reasons.map((reason) => (
+            {skipClassReasons.map((reason) => (
               <MenuItem key={reason.value} value={reason.value}>
                 {reason.label}
               </MenuItem>
@@ -45,15 +46,17 @@ const UniversityInputPart: React.FC<TProps> = ({
         </FormControl>
       </Box>
 
-      <Box mt={3}>
-        <Typography>step2. 隣のテンプレート文を参考に入力してね！</Typography>
+      <Box mt={5}>
+        <ResponsiveInputMessage
+          pcMessage={"step2. 隣のテンプレート文を参考に入力してね！"}
+          spMessage={"step2. 下のテンプレート文を参考に入力してね！"}
+        />
         <Grid container p={1.5}>
           <Grid item xs={6} sm={6} {...SInput}>
             <CustomInput
               label={"教授の名前"}
               value={userData.teacher}
               onChange={(e) => updateUserData("teacher", e.target.value)}
-              fullWidth
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
@@ -62,7 +65,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               value={userData.grade}
               onChange={(e) => updateUserData("grade", e.target.value)}
               type="number"
-              fullWidth
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
@@ -70,7 +72,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               label={"名前"}
               value={userData.name}
               onChange={(e) => updateUserData("name", e.target.value)}
-              fullWidth
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
@@ -78,7 +79,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               label={"日付"}
               value={userData.date}
               onChange={(e) => updateUserData("date", e.target.value)}
-              fullWidth
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
@@ -87,7 +87,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               value={userData.time}
               onChange={(e) => updateUserData("time", e.target.value)}
               type="number"
-              fullWidth
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
@@ -95,7 +94,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               label={"講義名"}
               value={userData.lesson}
               onChange={(e) => updateUserData("lesson", e.target.value)}
-              fullWidth
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
@@ -105,7 +103,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               onChange={(e) =>
                 updateUserData("universityNumber", e.target.value)
               }
-              fullWidth
             />
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
@@ -113,7 +110,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               label={"電話番号"}
               value={userData.phoneNumber}
               onChange={(e) => updateUserData("phoneNumber", e.target.value)}
-              fullWidth
             />
           </Grid>
           <Grid item xs={12} sm={12} {...SInput}>
@@ -121,7 +117,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               label={"大学学部学科"}
               value={userData.university}
               onChange={(e) => updateUserData("university", e.target.value)}
-              fullWidth
             />
           </Grid>
           <Grid item xs={12} sm={12} {...SInput}>
@@ -131,7 +126,6 @@ const UniversityInputPart: React.FC<TProps> = ({
               onChange={(e) =>
                 updateUserData("universityEmail", e.target.value)
               }
-              fullWidth
             />
           </Grid>
         </Grid>
