@@ -12,16 +12,14 @@ const RenlakuMessage = (props: { highlightTitle: string }) => {
           py={2}
           textAlign={"center"}
         >
-          <Highlight>Renlaku</Highlight>
-          を使って
+          <Highlight>Renlaku</Highlight>で
           <HighlightTitle>{props.highlightTitle}</HighlightTitle>
-          の<br />
-          メール文を作成しよう！
+          <br />
+          のメール文を作成しよう！
         </Typography>
       ) : (
         <Typography color={"white"} fontSize={27} py={2}>
-          <Highlight>Renlaku</Highlight>
-          を使って
+          <Highlight>Renlaku</Highlight>で
           <HighlightTitle>{props.highlightTitle}</HighlightTitle>
           のメール文を作成しよう！
         </Typography>
