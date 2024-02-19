@@ -28,8 +28,6 @@ const CancelOfferMailText = forwardRef<HTMLDivElement, CancelJobOfferUserType>(
         お世話になっております。{university}
         {grade}年{name}です。
         <br />
-        この度は、内定のご連絡をいただき、誠にありがとうございます。
-        <br />
         <br />
         {reasonText}
         <br />
