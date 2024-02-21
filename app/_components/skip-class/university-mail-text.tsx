@@ -22,7 +22,8 @@ const UniversityMailText = forwardRef<HTMLDivElement, SkipClassUserType>(
     return (
       <Typography
         ref={ref}
-        p={{ xs: 4, sm: 6 }}
+        py={{ xs: 4, sm: 6 }}
+        px={{ xs: 3, sm: 5 }}
         fontSize={{ xs: "15px", sm: "16px" }}
       >
         {teacher}先生 <br />
@@ -32,13 +33,13 @@ const UniversityMailText = forwardRef<HTMLDivElement, SkipClassUserType>(
         <br />
         申し訳ありませんが、{date} {time}限の{lesson}
         の講義は欠席させてください。
-        <br />
         また、今回の課題がございましたら教えていただけると幸いです。
+        <br />
         <br />
         お手数おかけしますが、どうぞ宜しくお願い致します。
         <br />
         <br />
-        ------------------------------------------------------
+        --------------------------------------------------------
         <br />
         {name}
         <br />
@@ -50,7 +51,7 @@ const UniversityMailText = forwardRef<HTMLDivElement, SkipClassUserType>(
         <br />
         電話番号 : {phoneNumber}
         <br />
-        ------------------------------------------------------
+        --------------------------------------------------------
       </Typography>
     );
   }
