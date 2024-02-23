@@ -10,7 +10,13 @@ const GreetingMessage: React.FC<TProps> = ({ currentUser }) => {
     <>
       {currentUser ? (
         <Typography color={"white"} fontSize={{ xs: 20, md: 27 }}>
-          {currentUser.email}さんこんにちは！
+          {currentUser.userName ? (
+            <>{currentUser.userName}さんこんにちは！</>
+          ) : currentUser.name ? (
+            <>{currentUser.name}さんこんにちは！</>
+          ) : (
+            <>{currentUser.email}さんこんにちは！</>
+          )}
         </Typography>
       ) : (
         <Typography color={"white"} fontSize={{ xs: 20, md: 27 }}>
