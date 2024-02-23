@@ -9,7 +9,7 @@ type TProps = {
   currentUser: User | null;
 };
 
-const CancelOfferFirstView: React.FC<TProps> = ({ currentUser }) => {
+const PartTimeFirstView: React.FC<TProps> = ({ currentUser }) => {
   return (
     <Box
       display={"flex"}
@@ -20,7 +20,7 @@ const CancelOfferFirstView: React.FC<TProps> = ({ currentUser }) => {
       pb={4}
     >
       <Greeting currentUser={currentUser} />
-      <Message highlightTitle={"内定辞退をするとき"} />
+      <Message highlightTitle={"アルバイトを休むとき"} />
       <ProfileLinkOrSignup
         currentUser={currentUser}
         profileLinkContent={"プロフィール編集はこちらから"}
@@ -31,4 +31,4 @@ const CancelOfferFirstView: React.FC<TProps> = ({ currentUser }) => {
   );
 };
 
-export default CancelOfferFirstView;
+export default PartTimeFirstView;

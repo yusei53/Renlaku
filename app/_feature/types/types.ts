@@ -28,3 +28,8 @@ export type CancelJobOfferUserType = {
   privateEmail: string | null;
   phoneNumber: string | null;
 };
+
+export type SkipPartTimeUserType = {
+  reasonText: string | null;
+  name: string | null;
+};

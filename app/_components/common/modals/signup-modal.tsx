@@ -16,6 +16,7 @@ import useLoginModal from "@/app/_feature/hooks/useLoginModal";
 import Modal from "./custom-modal";
 
 const schema = z.object({
+  userName: z.string().min(1, { message: "ユーザーネームを入力してください" }),
   email: z.string().email({ message: "メールアドレスの形式ではありません" }),
   password: z.string().min(6, { message: "6文字以上入力する必要があります" }),
 });
@@ -32,7 +33,7 @@ const SignupModal = () => {
     formState: { errors },
   } = useForm<FieldValues>({
     //初期値
-    defaultValues: { email: "", password: "" },
+    defaultValues: { userName: "", email: "", password: "" },
     //入力値の検証
     resolver: zodResolver(schema),
   });
@@ -59,7 +60,7 @@ const SignupModal = () => {
         });
 
         signupModal.onClose();
-        router.push("/skip-class");
+        router.push("/profile");
         router.refresh();
       }
     } catch (error) {
@@ -71,6 +72,14 @@ const SignupModal = () => {
 
   const bodyContent = (
     <Box component={"form"} display="flex" flexDirection="column" gap={3}>
+      <Input
+        id="userName"
+        label="ユーザー名"
+        disabled={loading}
+        register={register}
+        errors={errors}
+        required
+      />
       <Input
         id="email"
         label="メールアドレス"
@@ -95,7 +104,7 @@ const SignupModal = () => {
     <Box gap={3}>
       {/* Googleログイン */}
       <Button
-        label="Googleでログイン"
+        label="Googleで新規登録"
         icon={FcGoogle}
         onClick={() => signIn("google")}
         sx={{

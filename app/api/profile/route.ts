@@ -6,6 +6,7 @@ export async function PATCH(request: Request) {
   try {
     const body = await request.json();
     const {
+      userName,
       name,
       university,
       grade,
@@ -27,6 +28,7 @@ export async function PATCH(request: Request) {
         id: currentUser.id,
       },
       data: {
+        userName,
         name,
         university,
         grade,

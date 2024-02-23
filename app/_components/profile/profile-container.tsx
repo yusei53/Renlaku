@@ -16,6 +16,7 @@ type TProps = {
 const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [isFormChanged, setIsFormChanged] = useState(false);
 
   const {
     register,
@@ -40,13 +41,17 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
   }, [currentUser, reset]);
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    if (!isFormChanged) {
+      router.push("/create-mail?category=skip-class");
+      return;
+    }
     setLoading(true);
 
     try {
       const res = await axios.patch("/api/profile", data);
       if (res.status == 200) {
         toast.success("プロフィールを更新しました！");
-        router.refresh();
+        router.push("/create-mail?category=skip-class");
       }
     } catch (error) {
       toast.error("エラーが発生しました" + error);
@@ -57,6 +62,7 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsFormChanged(true);
     const { name, value } = event.target;
     setValue(name, value);
   };
@@ -70,12 +76,20 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
       py={5}
     >
       <HookFormInput
+        id="userName"
+        label="ユーザーネーム"
+        disabled={loading}
+        register={register}
+        errors={errors}
+        value={currentUser?.userName}
+        onChange={handleInputChange}
+      />
+      <HookFormInput
         id="name"
         label="名前"
         disabled={loading}
         register={register}
         errors={errors}
-        required
         value={currentUser?.name}
         onChange={handleInputChange}
       />
@@ -85,7 +99,6 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
         disabled={loading}
         register={register}
         errors={errors}
-        required
         value={currentUser?.university}
         onChange={handleInputChange}
       />
@@ -96,7 +109,6 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
         register={register}
         errors={errors}
         type="number"
-        required
         value={currentUser?.grade}
         onChange={handleInputChange}
       />
@@ -106,7 +118,6 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
         disabled={loading}
         register={register}
         errors={errors}
-        required
         value={currentUser?.universityNumber}
         onChange={handleInputChange}
       />
@@ -116,7 +127,6 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
         disabled={loading}
         register={register}
         errors={errors}
-        required
         value={currentUser?.privateEmail}
         onChange={handleInputChange}
       />
@@ -126,7 +136,6 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
         disabled={loading}
         register={register}
         errors={errors}
-        required
         value={currentUser?.universityEmail}
         onChange={handleInputChange}
       />
@@ -136,7 +145,6 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
         disabled={loading}
         register={register}
         errors={errors}
-        required
         value={currentUser?.phoneNumber}
         onChange={handleInputChange}
       />
