@@ -1,5 +1,5 @@
 "use client";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 import { User } from "@prisma/client";
 import { useState } from "react";
 import useSignupModal from "@/app/_feature/hooks/useSignupModal";
@@ -7,6 +7,7 @@ import useLoginModal from "@/app/_feature/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import LpButton from "../button/lp-button";
 import { useRouter } from "next/navigation";
+import { CustomLink } from "../link/custom-link";
 
 type TProps = {
   currentUser: User | null;
@@ -21,9 +22,13 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
   return (
     <AppBar position="static" color="inherit" sx={{ p: 0.5 }}>
       <Toolbar>
-        <Typography flexGrow={1} color={"black"} fontSize={"1.8rem"}>
+        <CustomLink
+          href="/"
+          underline="none"
+          sx={{ flexGrow: 1, color: "black", fontSize: "1.8rem" }}
+        >
           Renlaku
-        </Typography>
+        </CustomLink>
         <LpButton
           bgColor="white"
           color="black"
