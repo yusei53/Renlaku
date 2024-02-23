@@ -1,6 +1,7 @@
 import {
   Box,
   Typography,
+  Grid,
   FormControl,
   InputLabel,
   MenuItem,
@@ -41,20 +42,20 @@ const PartTimeInputPart: React.FC<TProps> = ({ userData, updateUserData }) => {
           </CustomSelect>
         </FormControl>
       </Box>
-
       <Box mt={5}>
         <ResponsiveInputMessage
           pcMessage={"step2. 隣のテンプレート文を参考に入力してね！"}
           spMessage={"step2. 下のテンプレート文を参考に入力してね！"}
         />
-        <Box p={1.5}>
-          <CustomInput
-            label={"名前"}
-            value={userData.name}
-            onChange={(e) => updateUserData("name", e.target.value)}
-            {...SInput}
-          />
-        </Box>
+        <Grid container p={1.5}>
+          <Grid item xs={12} {...SInput}>
+            <CustomInput
+              label={"名前"}
+              value={userData.name}
+              onChange={(e) => updateUserData("name", e.target.value)}
+            />
+          </Grid>
+        </Grid>
       </Box>
     </Box>
   );

@@ -19,7 +19,7 @@ const CancelOfferMailText = forwardRef<HTMLDivElement, CancelJobOfferUserType>(
     return (
       <Typography
         ref={ref}
-        py={{ xs: 4, sm: 6 }}
+        py={6}
         px={{ xs: 3, sm: 5 }}
         fontSize={{ xs: "15px", sm: "16px" }}
       >

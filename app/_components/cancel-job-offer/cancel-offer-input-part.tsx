@@ -78,7 +78,7 @@ const CancelOfferInputPart: React.FC<TProps> = ({
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
             <CustomInput
-              label={"氏名"}
+              label={"名前"}
               value={userData.name}
               onChange={(e) => updateUserData("name", e.target.value)}
             />
