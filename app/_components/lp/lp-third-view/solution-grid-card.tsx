@@ -3,7 +3,7 @@ import SolutionCard from "./solution-card";
 
 const SolutionGridCard = () => {
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Grid container spacing={1} padding={"2% 4%"}>
@@ -19,7 +19,7 @@ const SolutionGridCard = () => {
           title="使い回し可能"
           firstContent="プロフィール項目登録で"
           secondContent="都度コピーするだけ"
-          smallScreen={isSmallScreen ? false : true}
+          smallScreen={isMediumScreen ? false : true}
         />
       </Grid>
       <Grid item xs={12} sm={12} md={12} lg={4} xl={4} py={2}>
@@ -27,7 +27,7 @@ const SolutionGridCard = () => {
           title="バリエーションが豊富"
           firstContent="学生がよく送るメールの"
           secondContent="テンプレートを用意"
-          smallScreen={isSmallScreen ? false : true}
+          smallScreen={isMediumScreen ? false : true}
         />
       </Grid>
     </Grid>
