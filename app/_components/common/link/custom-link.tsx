@@ -1,5 +1,5 @@
 import { Link as MuiLink, SxProps } from "@mui/material";
-import NextLink, { LinkProps } from "next/link";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 type TProps = {
@@ -16,10 +16,10 @@ export const CustomLink: React.FC<TProps> = ({
   underline,
 }) => {
   return (
-    <NextLink href={href} legacyBehavior>
+    <Link href={href} legacyBehavior>
       <MuiLink underline={underline} sx={{ cursor: "pointer", ...sx }}>
         {children}
       </MuiLink>
-    </NextLink>
+    </Link>
   );
 };
