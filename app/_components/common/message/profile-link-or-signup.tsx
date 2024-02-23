@@ -7,11 +7,13 @@ type TProps = {
   currentUser: User | null;
   profileLinkContent: string;
   signupModalContent: string;
+  reachContent: string;
 };
 const ProfileLinkOrSignup: React.FC<TProps> = ({
   currentUser,
   profileLinkContent,
   signupModalContent,
+  reachContent,
 }) => {
   const signupModal = useSignupModal();
 
@@ -33,21 +35,38 @@ const ProfileLinkOrSignup: React.FC<TProps> = ({
           </Typography>
         </Link>
       ) : (
-        <Typography
-          color={"white"}
-          sx={{
-            textDecoration: "underline",
-            "&:hover": {
-              color: "#FEDD49",
-              cursor: "pointer",
-            },
-          }}
-          onClick={() => {
-            signupModal.onOpen();
-          }}
-        >
-          {signupModalContent}
-        </Typography>
+        <>
+          <Typography
+            color={"white"}
+            sx={{
+              textDecoration: "underline",
+              "&:hover": {
+                color: "#FEDD49",
+                cursor: "pointer",
+              },
+            }}
+            onClick={() => {
+              signupModal.onOpen();
+            }}
+          >
+            {signupModalContent}
+          </Typography>
+          <Link href={"/"}>
+            <Typography
+              color={"white"}
+              p={1}
+              sx={{
+                textDecoration: "underline",
+                "&:hover": {
+                  color: "#FEDD49",
+                  cursor: "pointer",
+                },
+              }}
+            >
+              {reachContent}
+            </Typography>
+          </Link>
+        </>
       )}
     </>
   );

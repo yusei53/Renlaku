@@ -23,7 +23,8 @@ const CancelOfferFirstView: React.FC<TProps> = ({ currentUser }) => {
       <ProfileLinkOrSignup
         currentUser={currentUser}
         profileLinkContent={"プロフィール編集はこちらから"}
-        signupModalContent={"新規登録/ログインでより速くメールを作成しよう"}
+        signupModalContent={"新規登録/ログインでより速くメールを作成"}
+        reachContent={"Renlakuとは"}
       />
     </Box>
   );
