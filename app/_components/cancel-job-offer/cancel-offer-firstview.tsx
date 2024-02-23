@@ -16,10 +16,11 @@ const CancelOfferFirstView: React.FC<TProps> = ({ currentUser }) => {
       flexDirection={"column"}
       alignItems={"center"}
       bgcolor={"#016fe5"}
-      py={6}
+      pt={6}
+      pb={4}
     >
       <Greeting currentUser={currentUser} />
-      <Message highlightTitle={"内定辞退する時"} />
+      <Message highlightTitle={"内定辞退をするとき"} />
       <ProfileLinkOrSignup
         currentUser={currentUser}
         profileLinkContent={"プロフィール編集はこちらから"}
