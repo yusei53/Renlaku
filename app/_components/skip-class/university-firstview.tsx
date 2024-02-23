@@ -16,14 +16,16 @@ const UniversityFirstView: React.FC<TProps> = ({ currentUser }) => {
       flexDirection={"column"}
       alignItems={"center"}
       bgcolor={"#016fe5"}
-      py={6}
+      pt={6}
+      pb={4}
     >
       <Greeting currentUser={currentUser} />
       <Message highlightTitle={"大学を休む時"} />
       <ProfileLinkOrSignup
         currentUser={currentUser}
         profileLinkContent={"プロフィール編集はこちらから"}
-        signupModalContent={"新規登録/ログインでより速くメールを作成しよう"}
+        signupModalContent={"新規登録/ログインでより速くメールを作成"}
+        reachContent={"Renlakuとは"}
       />
     </Box>
   );
