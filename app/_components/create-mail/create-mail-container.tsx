@@ -3,10 +3,14 @@ import { Tabs, Tab, Box } from "@mui/material";
 import { useRouter, useSearchParams } from "next/navigation";
 import { User } from "@prisma/client";
 import { useEffect, useState } from "react";
-import TopTabPanel from "./common/tab/top-tab-panel";
-import BottomTabPanel from "./common/tab/bottom-tab-panel";
+import TopTabPanel from "../common/tab/top-tab-panel";
+import BottomTabPanel from "../common/tab/bottom-tab-panel";
 
-export default function Test({ currentUser }: { currentUser: User | null }) {
+export default function CreateMailContainer({
+  currentUser,
+}: {
+  currentUser: User | null;
+}) {
   const [tabValue, setTabValue] = useState("skip-class");
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -36,15 +40,21 @@ export default function Test({ currentUser }: { currentUser: User | null }) {
       {tabValue === "cancel-job-offer" && (
         <TopTabPanel value={tabValue} currentUser={currentUser} />
       )}
+      {tabValue === "skip-part-time" && (
+        <TopTabPanel value={tabValue} currentUser={currentUser} />
+      )}
       <Tabs value={tabValue} onChange={handleChange} centered>
         <Tab label="大学の欠席" value="skip-class" />
         <Tab label="内定取り消し" value="cancel-job-offer" />
-        <Tab label="tab3" value="tab3" />
+        <Tab label="アルバイト欠席" value="skip-part-time" />
       </Tabs>
       {tabValue === "skip-class" && (
         <BottomTabPanel value={tabValue} currentUser={currentUser} />
       )}
       {tabValue === "cancel-job-offer" && (
+        <BottomTabPanel value={tabValue} currentUser={currentUser} />
+      )}
+      {tabValue === "skip-part-time" && (
         <BottomTabPanel value={tabValue} currentUser={currentUser} />
       )}
     </Box>
