@@ -35,7 +35,12 @@ const SettingCard: React.FC<TProps> = ({ image, number, content }) => {
         <NumberCircle>
           <Typography fontSize={27}>{number}</Typography>
         </NumberCircle>
-        <Typography fontSize={18} fontWeight={"bold"} pt={2}>
+        <Typography
+          fontSize={18}
+          fontWeight={"bold"}
+          pt={1}
+          letterSpacing={0.8}
+        >
           {content}
         </Typography>
       </CardContent>
