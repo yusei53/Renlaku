@@ -8,11 +8,12 @@ import {
 } from "@mui/material";
 
 type TProps = {
+  image: string;
   number: string;
   content: string;
 };
 
-const SettingCard: React.FC<TProps> = ({ number, content }) => {
+const SettingCard: React.FC<TProps> = ({ image, number, content }) => {
   return (
     <Card
       sx={{
@@ -22,7 +23,7 @@ const SettingCard: React.FC<TProps> = ({ number, content }) => {
         border: "solid 4px #006EE3",
       }}
     >
-      <CardMedia component="img" image="/test.png" alt="card image" />
+      <CardMedia component="img" image={image} alt="設定画像" />
       <CardContent
         sx={{
           display: "flex",
@@ -33,7 +34,7 @@ const SettingCard: React.FC<TProps> = ({ number, content }) => {
         <NumberCircle>
           <Typography fontSize={27}>{number}</Typography>
         </NumberCircle>
-        <Typography fontSize={18} fontWeight={"bold"} pt={1}>
+        <Typography fontSize={18} fontWeight={"bold"} pt={2}>
           {content}
         </Typography>
       </CardContent>
