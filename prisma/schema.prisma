@@ -6,15 +6,17 @@ generator client {
 }
 
 datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_URL")
-  directUrl         = env("DIRECT_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
-  id               String   @id @default(uuid())
+  id               String    @id @default(uuid())
   userName         String?
-  email            String?  @unique
+  email            String?   @unique
+  emailVerified    DateTime?
+  image            String?
   hashedPassword   String?
   name             String?
   university       String?
@@ -23,4 +25,25 @@ model User {
   privateEmail     String?
   universityEmail  String?
   phoneNumber      String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime?  @updatedAt
+  accounts         Account[]
+}
+
+model Account {
+  id                String   @id @default(uuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
 }
