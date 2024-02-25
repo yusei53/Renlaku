@@ -21,6 +21,7 @@ const SettingCard: React.FC<TProps> = ({ image, number, content }) => {
         height: "100%",
         borderRadius: 3,
         border: "solid 4px #006EE3",
+        boxShadow: "none",
       }}
     >
       <CardMedia component="img" image={image} alt="設定画像" />

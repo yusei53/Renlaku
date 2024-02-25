@@ -33,7 +33,9 @@ const SolutionCard: React.FC<TProps> = ({
         width: "100%",
         height: "auto",
         borderRadius: 3,
-        border: "solid 1px #006ee3",
+        border: "solid 2px #006ee3",
+        boxShadow: "none",
+        mt: 1,
       }}
     >
       <Box textAlign={"center"} bgcolor={"#006ee3"}>
