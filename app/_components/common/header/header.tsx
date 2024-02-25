@@ -38,33 +38,36 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
         <LpButton
           bgColor="white"
           color="black"
-          sx={{
-            display: { xs: "none", md: "block" },
-          }}
+          sx={{ display: { xs: "none", sm: "block" } }}
           onClick={() => router.push("/")}
           label="サービスについて"
         />
         {currentUser ? (
-          <LpButton
-            bgColor="white"
-            color="black"
-            sx={{
-              display: { xs: "none", sm: "block" },
-            }}
-            onClick={() => {
-              signOut();
-              setIsOpen(false);
-            }}
-            label="ログアウト"
-          />
+          <>
+            <LpButton
+              bgColor="white"
+              color="black"
+              sx={{ display: { xs: "none", sm: "block" } }}
+              onClick={() => router.push("/profile")}
+              label="プロフィール編集"
+            />
+            <LpButton
+              bgColor="white"
+              color="black"
+              sx={{ display: { xs: "none", sm: "block" } }}
+              onClick={() => {
+                signOut();
+                setIsOpen(false);
+              }}
+              label="ログアウト"
+            />
+          </>
         ) : (
           <>
             <LpButton
               bgColor="white"
               color="black"
-              sx={{
-                display: { xs: "none", sm: "block" },
-              }}
+              sx={{ display: { xs: "none", sm: "block" } }}
               onClick={() => {
                 loginModal.onOpen();
                 setIsOpen(false);
@@ -74,9 +77,7 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
             <LpButton
               bgColor="white"
               color="black"
-              sx={{
-                display: { xs: "none", sm: "block" },
-              }}
+              sx={{ display: { xs: "none", sm: "block" } }}
               onClick={() => {
                 signupModal.onOpen();
                 setIsOpen(false);
@@ -87,11 +88,9 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
         )}
         <LpButton
           label="まずは使ってみる"
-          onClick={() => router.push("/skip-class")}
+          onClick={() => router.push("/create-mail?aaa=cancel-job-offer")}
           hover
-          sx={{
-            m: { xs: "12px 0", sm: "12px" },
-          }}
+          sx={{ m: { xs: "12px 0", sm: "12px" } }}
         />
       </Toolbar>
     </AppBar>
