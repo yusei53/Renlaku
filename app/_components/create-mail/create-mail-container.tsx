@@ -10,15 +10,13 @@ const CreateMailContainer = ({ currentUser }: { currentUser: User | null }) => {
   const [tabValue, setTabValue] = useState("skip-class");
   const router = useRouter();
   const searchParams = useSearchParams();
-  const fffsearchParams = searchParams.get("category");
+  const category = searchParams.get("category");
 
   useEffect(() => {
-    if (fffsearchParams) {
-      setTabValue(
-        Array.isArray(fffsearchParams) ? fffsearchParams[0] : fffsearchParams
-      );
+    if (category) {
+      setTabValue(Array.isArray(category) ? category[0] : category);
     }
-  }, [fffsearchParams]);
+  }, [category]);
 
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     router.push(window.location.pathname + "/?category=" + newValue);
