@@ -20,12 +20,18 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
   const router = useRouter();
 
   return (
-    <AppBar position="static" color="inherit" sx={{ p: 0.5 }}>
+    <AppBar position="static" color="inherit" sx={{ p: 0.4 }}>
       <Toolbar>
         <CustomLink
           href="/"
           underline="none"
-          sx={{ flexGrow: 1, color: "black", fontSize: "1.8rem" }}
+          sx={{
+            flexGrow: 1,
+            color: "black",
+            fontSize: "1.9rem",
+            fontFamily: "system-ui",
+            letterSpacing: "0.5px",
+          }}
         >
           Renlaku
         </CustomLink>
