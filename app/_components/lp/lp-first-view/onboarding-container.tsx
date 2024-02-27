@@ -58,9 +58,7 @@ export const OnboardingContainer = () => {
         <Box pt={3}>
           <LpButton
             label="まずは使ってみる"
-            onClick={() =>
-              router.push("/create-mail?category=cancel-job-offer")
-            }
+            onClick={() => router.push("/create-mail?category=skip-class")}
             hover
             sx={{ ...styledButton }}
           />
