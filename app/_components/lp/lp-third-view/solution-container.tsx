@@ -8,10 +8,12 @@ import {
 } from "@mui/material";
 import LpButton from "../../common/button/lp-button";
 import SolutionGridCard from "./solution-grid-card";
+import useSignupModal from "@/app/_feature/hooks/useSignupModal";
 
 export const SolutionContainer = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const signupModal = useSignupModal();
 
   return (
     <Container>
@@ -79,7 +81,9 @@ export const SolutionContainer = () => {
         <SolutionGridCard />
         <LpButton
           label="新規登録 / ログイン"
-          onClick={() => {}}
+          onClick={() => {
+            signupModal.onOpen();
+          }}
           hover
           sx={{ ...styledButton }}
         />

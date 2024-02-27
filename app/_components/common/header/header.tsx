@@ -88,7 +88,7 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
         )}
         <LpButton
           label="まずは使ってみる"
-          onClick={() => router.push("/create-mail?category=cancel-job-offer")}
+          onClick={() => router.push("/create-mail?category=skip-class")}
           hover
           sx={{ m: { xs: "12px 0", sm: "12px" } }}
         />
