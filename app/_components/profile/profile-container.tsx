@@ -8,6 +8,8 @@ import toast from "react-hot-toast";
 import { User } from "@prisma/client";
 import HookFormInput from "../common/input/hook-form-input";
 import ProfileItem from "./profile-item";
+import useSignupModal from "@/app/_feature/hooks/useSignupModal";
+import NotFoundProfile from "./not-found-profile";
 
 type TProps = {
   currentUser: User | null;
@@ -152,13 +154,19 @@ const ProfileContainer: React.FC<TProps> = ({ currentUser }) => {
   );
 
   return (
-    <ProfileItem
-      disabled={loading}
-      title="プロフィール編集"
-      primaryLabel="更新する"
-      onSubmit={handleSubmit(onSubmit)}
-      body={bodyContent}
-    />
+    <>
+      {currentUser ? (
+        <ProfileItem
+          disabled={loading}
+          title="プロフィール編集"
+          primaryLabel="更新する"
+          onSubmit={handleSubmit(onSubmit)}
+          body={bodyContent}
+        />
+      ) : (
+        <NotFoundProfile />
+      )}
+    </>
   );
 };
 
