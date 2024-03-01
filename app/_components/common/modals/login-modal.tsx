@@ -59,7 +59,7 @@ const LoginModal = () => {
 
       toast.success("ログインしました");
       loginModal.onClose();
-      router.push("/skip-class");
+      router.push("/create-mail?category=skip-class");
       router.refresh();
     } catch (error) {
       toast.error("エラーが発生しました" + error);
