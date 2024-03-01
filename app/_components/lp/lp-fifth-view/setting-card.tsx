@@ -11,9 +11,10 @@ type TProps = {
   image: string;
   number: string;
   content: string;
+  alt: string;
 };
 
-const SettingCard: React.FC<TProps> = ({ image, number, content }) => {
+const SettingCard: React.FC<TProps> = ({ image, number, content, alt }) => {
   return (
     <Card
       sx={{
@@ -24,7 +25,7 @@ const SettingCard: React.FC<TProps> = ({ image, number, content }) => {
         boxShadow: "none",
       }}
     >
-      <CardMedia component="img" image={image} alt="設定画像" />
+      <CardMedia component="img" image={image} alt={alt} />
       <CardContent
         sx={{
           display: "flex",

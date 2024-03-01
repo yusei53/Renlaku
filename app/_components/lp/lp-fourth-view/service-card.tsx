@@ -8,6 +8,7 @@ type TProps = {
   secondTitle: string;
   content: string;
   image: string;
+  alt: string;
   border?: boolean;
 };
 
@@ -17,13 +18,14 @@ const ServiceCard: React.FC<TProps> = ({
   secondTitle,
   content,
   image,
+  alt,
   border = true,
 }) => {
   const Container = styled(Box)(({ theme }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    borderBottom: border ? `1px solid #e6e6e6` : "",
+    borderBottom: border ? `1.5px solid #e6e6e6` : "",
     [theme.breakpoints.down("md")]: {
       flexDirection: "column",
     },
@@ -36,7 +38,7 @@ const ServiceCard: React.FC<TProps> = ({
           display={"flex"}
           alignItems={"center"}
           borderBottom={`1px solid black`}
-          marginY={3}
+          marginY={2}
           paddingY={1}
         >
           <Typography
@@ -67,12 +69,12 @@ const ServiceCard: React.FC<TProps> = ({
             </Typography>
           </Box>
         </Box>
-        <Typography component={"h5"} fontSize={15}>
+        <Typography component={"h5"} fontSize={15} letterSpacing={0.5}>
           {content}
         </Typography>
       </Box>
-      <Box p={5} mt={{ xs: 0, md: 3 }}>
-        <ResponsiveImage src={image} alt={"ff"} width={250} height={225} />
+      <Box p={4} mt={{ xs: 0, md: 3 }}>
+        <ResponsiveImage src={image} alt={alt} width={295} height={225} />
       </Box>
     </Container>
   );
@@ -80,7 +82,7 @@ const ServiceCard: React.FC<TProps> = ({
 
 const ResponsiveImage = styled(Image)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
-    width: 175,
+    width: 200,
     height: 175,
   },
 }));
