@@ -70,7 +70,15 @@ export const OnboardingContainer = () => {
           />
         </Box>
       </Box>
-      <ResponsiveImage src="/pc.png" alt={"test"} height={450} width={490} />
+      <ResponsiveImage
+        src="/pc.png"
+        alt={
+          "時間を節約したい、忙しい学生のためのメールアシスタント。簡単にメール作成"
+        }
+        height={450}
+        width={490}
+        priority
+      />
     </Container>
   );
 };
