@@ -9,16 +9,24 @@ import { Footer } from "./_components/common/footer";
 
 const siteName = "Renlaku | メール簡単作成ツール";
 const description =
-  "Renlakuは簡単にメールを作成できるツールです。大学やアルバイトの欠席メールや、企業の人事に送るメール等で学生は決まりきった文でメールを作成しなければなりません。REnlakuであれば簡単に作成することができます。";
-const url = "http://localhost:3000";
+  "Renlakuは簡単にメールを作成できるツールです。直感的なインターフェイスでメール作成の手間を削減し、メールを迅速に作成します。面倒なフォーマット作成や文言の悩みから解放され、時間を節約しながらも思いを的確に伝えるメールを作成できます。";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.renlaku.com/"),
   title: {
     default: siteName,
     template: "%s | Renlaku",
   },
   description: description,
-  //OGPとTwitterカードの設定後でする
+  openGraph: {
+    title: siteName,
+    description: description,
+  },
+  twitter: {
+    title: siteName,
+    description: description,
+    card: "summary_large_image",
+  },
 };
 
 export default async function RootLayout({
