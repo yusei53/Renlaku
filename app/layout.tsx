@@ -46,9 +46,9 @@ export default async function RootLayout({
           <LoginModal />
           <Header currentUser={currentUser} />
           {children}
-          <SpeedInsights />
           <Footer />
         </AuthContext>
+        <SpeedInsights />
       </body>
     </html>
   );
