@@ -6,6 +6,7 @@ import { Header } from "./_components/common/header";
 import SignupModal from "./_components/common/modals/signup-modal";
 import LoginModal from "./_components/common/modals/login-modal";
 import { Footer } from "./_components/common/footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const siteName = "Renlaku | メール簡単作成ツール";
 const description =
@@ -45,6 +46,7 @@ export default async function RootLayout({
           <LoginModal />
           <Header currentUser={currentUser} />
           {children}
+          <SpeedInsights />
           <Footer />
         </AuthContext>
       </body>
