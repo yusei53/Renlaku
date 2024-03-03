@@ -54,7 +54,7 @@ const Container = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  padding: "4% 18%",
+  padding: "4% 20%",
   paddingBottom: "5%",
   backgroundColor: "#f7f7f7",
   [theme.breakpoints.down("md")]: {

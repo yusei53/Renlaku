@@ -22,7 +22,7 @@ export const OnboardingContainer = () => {
       <Box mb={4}>
         <Typography
           mt={3}
-          fontSize={{ xs: 16, sm: 19, lg: 21 }}
+          fontSize={{ xs: 18, sm: 19, lg: 21 }}
           fontWeight={"bold"}
           lineHeight={1.5}
           color={"white"}
@@ -37,10 +37,10 @@ export const OnboardingContainer = () => {
             "時間を節約したい、忙しい学生のためのメールアシスタント"
           )}
         </Typography>
-        <Typography mt={3} {...styledTitle}>
+        <Typography component={"h1"} mt={3} {...styledTitle}>
           メール作成が
         </Typography>
-        <Typography mb={7} {...styledTitle}>
+        <Typography component={"h1"} mb={7} {...styledTitle}>
           これまでになく簡単に
         </Typography>
         <Typography
@@ -84,8 +84,7 @@ export const OnboardingContainer = () => {
 };
 
 const styledTitle = {
-  components: "h1",
-  fontSize: { xs: 35, sm: 45, lg: 50 },
+  fontSize: { xs: 33, sm: 45, lg: 50 },
   fontWeight: "bold",
   lineHeight: 1.5,
   color: "white",
