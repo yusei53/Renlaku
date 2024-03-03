@@ -7,6 +7,7 @@ import SignupModal from "./_components/common/modals/signup-modal";
 import LoginModal from "./_components/common/modals/login-modal";
 import { Footer } from "./_components/common/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import GoogleAnalytics from "./_components/google-analytics/google-analytics";
 
 const siteName = "Renlaku | メール簡単作成ツール";
 const description =
@@ -39,6 +40,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <GoogleAnalytics />
       <body style={{ margin: 0 }}>
         <AuthContext>
           <ToasterContext />
