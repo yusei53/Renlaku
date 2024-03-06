@@ -111,7 +111,7 @@ const Container = styled("div")(({ theme }) => ({
 
 const ResponsiveImage = styled(Image)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
-    width: "100%",
+    width: "auto",
     height: "auto",
     marginTop: "-4%",
   },
