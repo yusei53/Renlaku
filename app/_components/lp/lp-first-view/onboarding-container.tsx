@@ -40,7 +40,7 @@ export const OnboardingContainer = () => {
         <Typography component={"h1"} mt={3} {...styledTitle}>
           メール作成が
         </Typography>
-        <Typography component={"h1"} mb={7} {...styledTitle}>
+        <Typography component={"h1"} mb={4} {...styledTitle}>
           これまでになく簡単に
         </Typography>
         <Typography
@@ -92,7 +92,7 @@ const styledTitle = {
 };
 
 const styledButton = {
-  fontSize: { xs: "14px", sm: "18px", lg: "20px" },
+  fontSize: { xs: "15px", sm: "18px", lg: "20px" },
   p: { xs: "12px 15px", sm: "14px 28px", lg: "15px 30px" },
   fontWeight: "bold",
   borderRadius: 2,
@@ -111,7 +111,7 @@ const Container = styled("div")(({ theme }) => ({
 
 const ResponsiveImage = styled(Image)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
-    width: "90%",
+    width: "95%",
     height: "auto",
     marginTop: "-4%",
   },

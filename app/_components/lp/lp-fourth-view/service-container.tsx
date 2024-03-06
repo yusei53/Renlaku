@@ -7,7 +7,7 @@ export const ServiceContainer = () => {
     <Container>
       <Typography
         mt={2}
-        fontSize={{ xs: 22, sm: 30 }}
+        fontSize={{ xs: 24, sm: 30 }}
         fontWeight={"bold"}
         component={"h2"}
         letterSpacing={2}
