@@ -61,7 +61,7 @@ const UniversityInputPart: React.FC<TProps> = ({
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
             <CustomInput
-              label={"学年(半角数字のみ)"}
+              label={"学年(半角数字)"}
               value={userData.grade}
               onChange={(e) => updateUserData("grade", e.target.value)}
               type="number"
@@ -83,7 +83,7 @@ const UniversityInputPart: React.FC<TProps> = ({
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
             <CustomInput
-              label={"何限目(半角数字のみ)"}
+              label={"何限目(半角数字)"}
               value={userData.time}
               onChange={(e) => updateUserData("time", e.target.value)}
               type="number"

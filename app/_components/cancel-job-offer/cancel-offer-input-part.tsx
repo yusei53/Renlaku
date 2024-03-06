@@ -70,7 +70,7 @@ const CancelOfferInputPart: React.FC<TProps> = ({
           </Grid>
           <Grid item xs={6} sm={6} {...SInput}>
             <CustomInput
-              label={"学年(半角数字のみ)"}
+              label={"学年(半角数字)"}
               value={userData.grade}
               onChange={(e) => updateUserData("grade", e.target.value)}
               type="number"
