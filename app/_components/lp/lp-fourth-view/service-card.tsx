@@ -74,7 +74,7 @@ const ServiceCard: React.FC<TProps> = ({
         </Typography>
       </Box>
       <Box p={4} mt={{ xs: 0, md: 3 }}>
-        <ResponsiveImage src={image} alt={alt} width={295} height={225} />
+        <ResponsiveImage src={image} alt={alt} width={295} height={220} />
       </Box>
     </Container>
   );
@@ -82,7 +82,7 @@ const ServiceCard: React.FC<TProps> = ({
 
 const ResponsiveImage = styled(Image)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
-    width: 200,
+    width: 230,
     height: 175,
   },
 }));

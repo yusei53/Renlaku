@@ -92,7 +92,7 @@ const styledTitle = {
 };
 
 const styledButton = {
-  fontSize: { xs: "15px", sm: "18px", lg: "20px" },
+  fontSize: { xs: "16px", sm: "18px", lg: "20px" },
   p: { xs: "12px 15px", sm: "14px 28px", lg: "15px 30px" },
   fontWeight: "bold",
   borderRadius: 2,
@@ -111,7 +111,7 @@ const Container = styled("div")(({ theme }) => ({
 
 const ResponsiveImage = styled(Image)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
-    width: "95%",
+    width: "100%",
     height: "auto",
     marginTop: "-4%",
   },
