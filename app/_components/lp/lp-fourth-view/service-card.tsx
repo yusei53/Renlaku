@@ -69,7 +69,7 @@ const ServiceCard: React.FC<TProps> = ({
             </Typography>
           </Box>
         </Box>
-        <Typography component={"h5"} fontSize={15} letterSpacing={0.5}>
+        <Typography fontSize={15} letterSpacing={0.5}>
           {content}
         </Typography>
       </Box>
