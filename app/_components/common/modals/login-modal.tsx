@@ -98,7 +98,11 @@ const LoginModal = () => {
       <Button
         label="Googleでログイン"
         icon={FcGoogle}
-        onClick={() => signIn("google")}
+        onClick={() =>
+          signIn("google", {
+            callbackUrl: "/create-mail?category=skip-class",
+          })
+        }
         sx={{
           width: "100%",
           color: "black",

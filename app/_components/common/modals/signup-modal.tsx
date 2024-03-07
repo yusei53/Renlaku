@@ -106,7 +106,11 @@ const SignupModal = () => {
       <Button
         label="Googleで新規登録"
         icon={FcGoogle}
-        onClick={() => signIn("google")}
+        onClick={() =>
+          signIn("google", {
+            callbackUrl: "/create-mail?category=skip-class",
+          })
+        }
         sx={{
           width: "100%",
           color: "black",
