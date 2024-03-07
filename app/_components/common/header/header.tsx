@@ -1,5 +1,5 @@
 "use client";
-import { AppBar, Toolbar } from "@mui/material";
+import { AppBar, Box, Toolbar } from "@mui/material";
 import { User } from "@prisma/client";
 import { useState } from "react";
 import useSignupModal from "@/app/_feature/hooks/useSignupModal";
@@ -22,19 +22,20 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
   return (
     <AppBar position="static" color="inherit" sx={{ p: 0.4 }}>
       <Toolbar>
-        <CustomLink
-          href="/"
-          underline="none"
-          sx={{
-            flexGrow: 1,
-            color: "black",
-            fontSize: "1.9rem",
-            fontFamily: "system-ui",
-            letterSpacing: "0.5px",
-          }}
-        >
-          Renlaku
-        </CustomLink>
+        <Box flexGrow={1}>
+          <CustomLink
+            href="/"
+            underline="none"
+            sx={{
+              color: "black",
+              fontSize: "1.9rem",
+              fontFamily: "system-ui",
+              letterSpacing: "0.5px",
+            }}
+          >
+            Renlaku
+          </CustomLink>
+        </Box>
         <LpButton
           bgColor="white"
           color="black"
