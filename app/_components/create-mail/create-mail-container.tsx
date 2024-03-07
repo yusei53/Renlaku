@@ -2,9 +2,10 @@
 import { Tabs, Tab, Box, styled } from "@mui/material";
 import { useRouter, useSearchParams } from "next/navigation";
 import { User } from "@prisma/client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import TopTabPanel from "../common/tab/top-tab-panel";
 import BottomTabPanel from "../common/tab/bottom-tab-panel";
+import Loading from "@/app/loading";
 
 const CreateMailContainer = ({ currentUser }: { currentUser: User | null }) => {
   const [tabValue, setTabValue] = useState("skip-class");
@@ -30,11 +31,13 @@ const CreateMailContainer = ({ currentUser }: { currentUser: User | null }) => {
     <>
       <TopTabPanel value={tabValue} currentUser={currentUser} />
       <Box bgcolor={"#f7f7f7"}>
-        <StyledTabs value={tabValue} onChange={handleChange}>
-          <StyledTab label="大学の欠席" value="skip-class" />
-          <StyledTab label="内定取り消し" value="cancel-job-offer" />
-          <StyledTab label="アルバイト欠席" value="skip-part-time" />
-        </StyledTabs>
+        <Suspense fallback={<Loading />}>
+          <StyledTabs value={tabValue} onChange={handleChange}>
+            <StyledTab label="大学の欠席" value="skip-class" />
+            <StyledTab label="内定取り消し" value="cancel-job-offer" />
+            <StyledTab label="アルバイト欠席" value="skip-part-time" />
+          </StyledTabs>
+        </Suspense>
       </Box>
       <BottomTabPanel value={tabValue} currentUser={currentUser} />
     </>
