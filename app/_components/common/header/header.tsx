@@ -8,6 +8,7 @@ import { signOut } from "next-auth/react";
 import LpButton from "../button/lp-button";
 import { useRouter } from "next/navigation";
 import { CustomLink } from "../link/custom-link";
+import Link from "next/link";
 
 type TProps = {
   currentUser: User | null;
@@ -23,18 +24,18 @@ export const Header: React.FC<TProps> = ({ currentUser }) => {
     <AppBar position="static" color="inherit" sx={{ p: 0.4 }}>
       <Toolbar>
         <Box flexGrow={1}>
-          <CustomLink
+          <Link
             href="/"
-            underline="none"
-            sx={{
+            style={{
               color: "black",
               fontSize: "1.9rem",
               fontFamily: "system-ui",
               letterSpacing: "0.5px",
+              textDecoration: "none",
             }}
           >
             Renlaku
-          </CustomLink>
+          </Link>
         </Box>
         <LpButton
           bgColor="white"

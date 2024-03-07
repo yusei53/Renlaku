@@ -8,7 +8,12 @@ export const Footer = () => {
         <Typography color="text.primary" fontSize={20} mb={1}>
           Renlaku
         </Typography>
-        <Box py={1}>
+        <Box
+          py={{
+            xs: 2,
+            sm: 1,
+          }}
+        >
           <Link href="/" color="text.secondary" underline="hover">
             Renlakuとは
           </Link>
