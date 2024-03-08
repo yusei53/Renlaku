@@ -30,7 +30,8 @@ const QuestionBar: React.FC<TProps> = ({ label, ImageSrc, AltText }) => {
       />
       <Typography
         fontSize={{ xs: 15, sm: 18 }}
-        paddingX={{ xs: 4, md: 5, lg: 0 }}
+        pl={{ xs: 4, md: 5, lg: 0 }}
+        pr={{ xs: 3, md: 5, lg: 0 }}
       >
         {label}
       </Typography>
@@ -38,7 +39,7 @@ const QuestionBar: React.FC<TProps> = ({ label, ImageSrc, AltText }) => {
         <Box
           position="absolute"
           top={{ xs: "210%", sm: "170%", md: 10 }}
-          right={{ xs: -10, md: -80, lg: -60 }}
+          right={{ xs: 0, md: -80, lg: -60 }}
           zIndex={2}
         >
           <Image width={230} height={200} src={ImageSrc} alt={AltText} />

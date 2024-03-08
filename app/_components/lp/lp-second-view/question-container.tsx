@@ -34,7 +34,7 @@ const Container = styled("div")(({ theme }) => ({
   paddingBottom: "5%",
   backgroundColor: "#f7f7f7",
   [theme.breakpoints.down("md")]: {
-    padding: "10% 7%",
+    padding: "10% 9%",
     paddingBottom: "22%",
   },
   [theme.breakpoints.down("sm")]: {
