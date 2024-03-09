@@ -6,7 +6,7 @@ const SettingGridCard = () => {
     <Grid container spacing={4} py={5} px={{ xs: 4, sm: 10 }}>
       <Grid item xs={12} md={4}>
         <SettingCard
-          image="login.png"
+          image="/login.png"
           number="1"
           content="新規登録/ログイン"
           alt="新規登録/ログイン"
@@ -14,7 +14,7 @@ const SettingGridCard = () => {
       </Grid>
       <Grid item xs={12} md={4}>
         <SettingCard
-          image="profile.png"
+          image="/profile.png"
           number="2"
           content="プロフィール登録"
           alt="プロフィール登録"
@@ -22,9 +22,9 @@ const SettingGridCard = () => {
       </Grid>
       <Grid item xs={12} md={4}>
         <SettingCard
-          image="login.png"
+          image="/create-mail.png"
           number="3"
-          content="ホーム画面に追加"
+          content="必要項目を入力"
           alt="ホーム画面に追加"
         />
       </Grid>

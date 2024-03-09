@@ -26,7 +26,7 @@ export const SettingContainer = () => {
             component={"h2"}
             m={4}
           >
-            導入の流れ
+            メール作成の流れ
           </Typography>
         </Box>
       </Box>
@@ -51,7 +51,7 @@ export const SettingContainer = () => {
           >
             {isSmallScreen ? (
               <>
-                <Highlight>誰でも簡単登録</Highlight>!
+                <Highlight>3つのステップ</Highlight>!
                 <br />
                 設定は<Highlight>3つ</Highlight>だけ！
               </>
