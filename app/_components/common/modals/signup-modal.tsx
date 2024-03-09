@@ -108,7 +108,7 @@ const SignupModal = () => {
         icon={FcGoogle}
         onClick={() =>
           signIn("google", {
-            callbackUrl: "/create-mail?category=skip-class",
+            callbackUrl: "/profile",
           })
         }
         sx={{
