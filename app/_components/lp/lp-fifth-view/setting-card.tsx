@@ -25,7 +25,16 @@ const SettingCard: React.FC<TProps> = ({ image, number, content, alt }) => {
         boxShadow: "none",
       }}
     >
-      <CardMedia component="img" image={image} alt={alt} />
+      <Box>
+        <CardMedia
+          component="img"
+          image={image}
+          alt={alt}
+          width={"100%"}
+          height={"100%"}
+        />
+      </Box>
+
       <CardContent
         sx={{
           display: "flex",
