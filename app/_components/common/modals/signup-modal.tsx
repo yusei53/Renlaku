@@ -59,7 +59,6 @@ const SignupModal = () => {
           redirect: false,
         });
 
-        signupModal.onClose();
         router.push("/profile");
         router.refresh();
       }
@@ -67,6 +66,7 @@ const SignupModal = () => {
       toast.error("エラーが発生しました" + error);
     } finally {
       setLoading(false);
+      signupModal.onClose();
     }
   };
 
