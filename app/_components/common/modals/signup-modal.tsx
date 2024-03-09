@@ -61,12 +61,12 @@ const SignupModal = () => {
 
         router.push("/profile");
         router.refresh();
+        signupModal.onClose();
       }
     } catch (error) {
       toast.error("エラーが発生しました" + error);
     } finally {
       setLoading(false);
-      signupModal.onClose();
     }
   };
 
