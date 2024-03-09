@@ -7,7 +7,6 @@ import useLoginModal from "@/app/_feature/hooks/useLoginModal";
 import { signOut } from "next-auth/react";
 import LpButton from "../button/lp-button";
 import { useRouter } from "next/navigation";
-import { CustomLink } from "../link/custom-link";
 import Link from "next/link";
 
 type TProps = {
