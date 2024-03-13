@@ -6,7 +6,7 @@ const SolutionGridCard = () => {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Grid container spacing={2} p={4}>
+    <Grid container spacing={2} py={4} px={{ xs: 4, sm: 6 }}>
       <Grid item xs={12} md={4}>
         <SolutionCard
           title="メールを高速で作成"
