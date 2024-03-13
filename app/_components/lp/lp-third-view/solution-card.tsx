@@ -62,7 +62,7 @@ const StyledContent = styled(Typography)(({ theme }) => ({
   fontSize: 18,
   fontWeight: "bold",
   letterSpacing: 1.5,
-  padding: "12px",
+  padding: "10px 12px",
   [theme.breakpoints.down("md")]: {},
 }));
 
