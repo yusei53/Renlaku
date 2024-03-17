@@ -3,8 +3,13 @@ import { Box, Typography } from "@mui/material";
 
 export const Footer = () => {
   return (
-    <Box component="footer" bgcolor={"#F7F7F7"} py={5} pl={8}>
-      <Box display={"flex"} flexDirection={"column"} justifyContent={"center"}>
+    <Box component="footer" bgcolor={"#F7F7F7"} py={5}>
+      <Box
+        display={"flex"}
+        flexDirection={"column"}
+        justifyContent={"center"}
+        pl={{ xs: 5, sm: 11 }}
+      >
         <Typography color="text.primary" fontSize={20} mb={1}>
           Renlaku
         </Typography>
