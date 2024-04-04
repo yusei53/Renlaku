@@ -12,7 +12,7 @@ const CancelOfferMailPart: React.FC<TPops> = ({ userData }) => {
   const textRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Box mx={2} mt={1} bgcolor={"#D7EEFF"} position={"relative"}>
+    <Box mt={1} bgcolor={"#D7EEFF"} position={"relative"}>
       <CopyButton textRef={textRef} />
       <CancelOfferMailText
         ref={textRef}
@@ -24,6 +24,7 @@ const CancelOfferMailPart: React.FC<TPops> = ({ userData }) => {
         reasonText={userData.reasonText || "{ ここに理由が挿入されます }"}
         privateEmail={userData.privateEmail || "{ メールアドレス }"}
         phoneNumber={userData.phoneNumber || "{ 電話番号 }"}
+        reasonLabel={null}
       />
     </Box>
   );
