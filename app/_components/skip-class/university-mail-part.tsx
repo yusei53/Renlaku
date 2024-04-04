@@ -12,7 +12,7 @@ const UniversityMailPart: React.FC<TProps> = ({ userData }) => {
   const textRef = useRef<HTMLDivElement>(null);
 
   return (
-    <Box mx={2} mt={1} bgcolor={"#D7EEFF"} position={"relative"}>
+    <Box mt={1} bgcolor={"#D7EEFF"} borderRadius={1} position={"relative"}>
       <CopyButton textRef={textRef} />
       <UniversityMailText
         ref={textRef}

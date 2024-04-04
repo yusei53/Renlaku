@@ -1,10 +1,11 @@
 "use client";
 import { User } from "@prisma/client";
 import { SkipClassUserType } from "../../_feature/types/types";
-import { Container, Grid } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import useUserData from "../../_feature/hooks/useUserData";
 import UniversityInputPart from "./university-input-part";
 import UniversityMailPart from "./university-mail-part";
+import UniversitySubMailPart from "./university-sub-mail-part";
 
 type TProps = {
   currentUser: User | null;
@@ -39,7 +40,10 @@ const UniversityMailContainer: React.FC<TProps> = ({ currentUser }) => {
           />
         </Grid>
         <Grid item xs={12} md={6.5}>
-          <UniversityMailPart userData={userData} />
+          <Box mx={2}>
+            <UniversitySubMailPart userData={userData} />
+            <UniversityMailPart userData={userData} />
+          </Box>
         </Grid>
       </Grid>
     </Container>

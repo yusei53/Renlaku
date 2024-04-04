@@ -20,6 +20,7 @@ export type SkipClassUserType = {
 
 export type CancelJobOfferUserType = {
   reasonText: string | null;
+  reasonLabel: string | null;
   company: string | null;
   companyUserName: string | null;
   university: string | null;

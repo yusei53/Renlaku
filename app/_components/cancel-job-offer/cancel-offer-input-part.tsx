@@ -35,7 +35,16 @@ const CancelOfferInputPart: React.FC<TProps> = ({
           </InputLabel>
           <CustomSelect
             value={userData.reasonText}
-            onChange={(e) => updateUserData("reasonText", e.target.value)}
+            onChange={(e) => {
+              const selectedReason = cancelOfferReasons.find(
+                (reason) => reason.value === e.target.value
+              );
+              updateUserData("reasonText", e.target.value);
+              updateUserData(
+                "reasonLabel",
+                selectedReason ? selectedReason.label : ""
+              );
+            }}
           >
             {cancelOfferReasons.map((reason) => (
               <MenuItem key={reason.value} value={reason.value}>

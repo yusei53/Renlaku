@@ -1,10 +1,11 @@
 "use client";
 import { User } from "@prisma/client";
-import { Container, Grid } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import useUserData from "../../_feature/hooks/useUserData";
 import { CancelJobOfferUserType } from "@/app/_feature/types/types";
 import CancelOfferInputPart from "./cancel-offer-input-part";
 import CancelOfferMailPart from "./cancel-offer-mail-part";
+import CancelOfferSubMailPart from "./cancel-offer-sub-mail-part";
 
 type TProps = {
   currentUser: User | null;
@@ -13,6 +14,7 @@ type TProps = {
 const CancelOfferContainer: React.FC<TProps> = ({ currentUser }) => {
   const defaultUserData: CancelJobOfferUserType = {
     reasonText: null,
+    reasonLabel: null,
     company: null,
     companyUserName: null,
     university: null,
@@ -37,7 +39,10 @@ const CancelOfferContainer: React.FC<TProps> = ({ currentUser }) => {
           />
         </Grid>
         <Grid item xs={12} md={6.5}>
-          <CancelOfferMailPart userData={userData} />
+          <Box mx={2}>
+            <CancelOfferSubMailPart userData={userData} />
+            <CancelOfferMailPart userData={userData} />
+          </Box>
         </Grid>
       </Grid>
     </Container>
