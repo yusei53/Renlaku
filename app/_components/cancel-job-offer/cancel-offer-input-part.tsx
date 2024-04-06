@@ -22,7 +22,7 @@ const CancelOfferInputPart: React.FC<TProps> = ({
   updateUserData,
 }) => {
   return (
-    <Box textAlign={"center"} mt={{ sm: 1 }}>
+    <Box textAlign={"center"} mt={{ sm: 4 }}>
       <Box>
         <Typography pb={"4%"}>step1. 何を辞退するか選択してね！</Typography>
         <FormControl sx={{ width: "230px" }}>
