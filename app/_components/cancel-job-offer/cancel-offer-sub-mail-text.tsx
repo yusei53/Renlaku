@@ -2,9 +2,11 @@ import { forwardRef } from "react";
 import { Typography } from "@mui/material";
 import { CancelJobOfferUserType } from "../../_feature/types/types";
 
+type CancelOfferSubMailTextType = Pick<CancelJobOfferUserType, "reasonText">;
+
 const CancelOfferSubMailText = forwardRef<
   HTMLDivElement,
-  CancelJobOfferUserType
+  CancelOfferSubMailTextType
 >(({ reasonText }, ref) => {
   return (
     <Typography

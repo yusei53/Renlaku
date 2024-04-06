@@ -16,17 +16,9 @@ const UniversitySubMailPart: React.FC<TProps> = ({ userData }) => {
       <CopyButton textRef={textRef} />
       <UniversitySubMailText
         ref={textRef}
-        university={null}
-        name={null}
-        grade={null}
-        reasonText={null}
-        teacher={null}
         date={userData.date || "{ 日付 }"}
         time={userData.time || "{ 何限 }"}
         lesson={userData.lesson || "{ 講義名 }"}
-        universityNumber={null}
-        universityEmail={null}
-        phoneNumber={null}
       />
     </Box>
   );
