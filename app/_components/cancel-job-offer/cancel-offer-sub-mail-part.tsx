@@ -16,15 +16,7 @@ const CancelOfferSubMailPart: React.FC<TProps> = ({ userData }) => {
       <CopyButton textRef={textRef} />
       <CancelOfferSubMailText
         ref={textRef}
-        company={null}
-        companyUserName={null}
-        university={null}
-        name={null}
-        grade={null}
         reasonText={userData.reasonLabel || "{ 辞退理由 }"}
-        privateEmail={null}
-        phoneNumber={null}
-        reasonLabel={null}
       />
     </Box>
   );
