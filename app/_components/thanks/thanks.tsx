@@ -38,7 +38,12 @@ const Thanks = () => {
         <Button variant="contained" color="primary" href="/" sx={{ m: 1 }}>
           ホームに戻る
         </Button>
-        <Button variant="contained" color="primary" href="/" sx={{ m: 1 }}>
+        <Button
+          variant="contained"
+          color="primary"
+          href="/create-mail?category=skip-class"
+          sx={{ m: 1 }}
+        >
           メール作成画面に戻る
         </Button>
       </Box>
