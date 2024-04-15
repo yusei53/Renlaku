@@ -7,9 +7,11 @@ type TProps = {
   type?: string;
   disabled?: boolean;
   required?: boolean;
+  multiline?: boolean;
   value?: string;
   register: UseFormRegister<FieldValues>;
   errors: any;
+  rows?: number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   sx?: SxProps;
 };
@@ -24,6 +26,9 @@ const HookFormInput: React.FC<TProps> = ({
   register,
   errors,
   onChange,
+  rows,
+  sx,
+  multiline,
 }) => {
   return (
     <TextField
@@ -33,10 +38,13 @@ const HookFormInput: React.FC<TProps> = ({
       disabled={disabled}
       defaultValue={value || ""}
       {...register(id, { required })}
-      error={errors[id]}
+      error={!!errors[id]}
       helperText={errors[id]?.message}
       onChange={onChange}
       size="small"
+      multiline={multiline}
+      rows={multiline ? rows : 1}
+      sx={sx}
     />
   );
 };

@@ -6,6 +6,7 @@ import useUserData from "../../_feature/hooks/useUserData";
 import UniversityInputPart from "./university-input-part";
 import UniversityMailPart from "./university-mail-part";
 import UniversitySubMailPart from "./university-sub-mail-part";
+import ContactForm from "../contact-form/contact-form";
 
 type TProps = {
   currentUser: User | null;
@@ -46,6 +47,7 @@ const UniversityMailContainer: React.FC<TProps> = ({ currentUser }) => {
           </Box>
         </Grid>
       </Grid>
+      <ContactForm />
     </Container>
   );
 };
