@@ -13,23 +13,32 @@ export const Footer = () => {
         <Typography color="text.primary" fontSize={20} mb={1}>
           Renlaku
         </Typography>
+        <Box>
+          <Link href="/" color="text.secondary" underline="hover">
+            Renlakuとは
+          </Link>
+        </Box>
         <Box
           py={{
             xs: 2,
             sm: 1,
           }}
         >
-          <Link href="/" color="text.secondary" underline="hover">
-            Renlakuとは
-          </Link>
-        </Box>
-        <Box>
           <Link
             href="https://twitter.com/yuseidayo53"
             color="text.secondary"
             underline="hover"
           >
             開発者
+          </Link>
+        </Box>
+        <Box>
+          <Link
+            href="https://www.renlaku.com/contact"
+            color="text.secondary"
+            underline="hover"
+          >
+            お問い合わせ
           </Link>
         </Box>
       </Box>
