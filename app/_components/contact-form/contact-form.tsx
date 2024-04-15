@@ -49,11 +49,11 @@ const ContactForm = () => {
       </Typography>
       <Box>
         <Typography fontSize={14}>
-          「こんなテンプレート文が欲しい！」「もっとこういう機能が欲しい！」など、Renlakuに関するリクエストを募集しています。
+          「こんなテンプレート文が欲しい！」「こういう機能が欲しい！」など、Renlakuに関するリクエストを募集しています。
           <br />
           より良いサービスを提供するため、お気軽にお問い合わせください！
         </Typography>
-        <Typography fontSize={14} mt={{ xs: 2, sm: 5 }}>
+        <Typography fontSize={14} mt={3}>
           ご利用報告などもいただけると開発の励みになりますので、お気軽に！
         </Typography>
       </Box>
@@ -78,7 +78,11 @@ const ContactForm = () => {
         multiline
         rows={5}
       />
-      <Button type="submit" fullWidth variant="contained" sx={{ mt: 1, mb: 2 }}>
+      <Button
+        type="submit"
+        variant="contained"
+        sx={{ mt: 1, mb: 2, bgcolor: "#006EE2", width: "175px" }}
+      >
         送信する
       </Button>
     </Box>
