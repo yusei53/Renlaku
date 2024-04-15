@@ -1,3 +1,4 @@
+"use client";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { Box, Button, Typography } from "@mui/material";
 import { z } from "zod";
