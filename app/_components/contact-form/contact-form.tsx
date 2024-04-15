@@ -5,6 +5,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import HookFormInput from "../common/input/hook-form-input";
+import { useRouter } from "next/navigation";
 
 const ContactForm = () => {
   const schema = z.object({
@@ -24,6 +25,7 @@ const ContactForm = () => {
 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const router = useRouter();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     await fetch("/api/contact", {
@@ -33,6 +35,7 @@ const ContactForm = () => {
       },
       body: JSON.stringify(data),
     });
+    router.push("/thanks");
   };
 
   return (
