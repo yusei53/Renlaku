@@ -47,6 +47,16 @@ const ContactForm = () => {
       <Typography variant="h5" component={"h3"} fontWeight={"bold"}>
         リクエスト・お問い合わせ
       </Typography>
+      <Box>
+        <Typography fontSize={14}>
+          「こんなテンプレート文が欲しい！」「もっとこういう機能が欲しい！」など、Renlakuに関するリクエストを募集しています。
+          <br />
+          より良いサービスを提供するため、お気軽にお問い合わせください！
+        </Typography>
+        <Typography fontSize={14} mt={{ xs: 2, sm: 5 }}>
+          ご利用報告などもいただけると開発の励みになりますので、お気軽に！
+        </Typography>
+      </Box>
       <HookFormInput
         id="contactEmail"
         label="メールアドレス"
@@ -69,7 +79,7 @@ const ContactForm = () => {
         rows={5}
       />
       <Button type="submit" fullWidth variant="contained" sx={{ mt: 1, mb: 2 }}>
-        メール送信
+        送信する
       </Button>
     </Box>
   );
