@@ -6,6 +6,7 @@ import { CancelJobOfferUserType } from "@/app/_feature/types/types";
 import CancelOfferInputPart from "./cancel-offer-input-part";
 import CancelOfferMailPart from "./cancel-offer-mail-part";
 import CancelOfferSubMailPart from "./cancel-offer-sub-mail-part";
+import ContactForm from "../contact-form/contact-form";
 
 type TProps = {
   currentUser: User | null;
@@ -45,6 +46,7 @@ const CancelOfferContainer: React.FC<TProps> = ({ currentUser }) => {
           </Box>
         </Grid>
       </Grid>
+      <ContactForm />
     </Container>
   );
 };
