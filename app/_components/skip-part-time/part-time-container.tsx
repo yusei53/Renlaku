@@ -5,6 +5,7 @@ import { Container, Grid } from "@mui/material";
 import useUserData from "../../_feature/hooks/useUserData";
 import PartTimeInputPart from "./part-time-input-part";
 import PartTimeMailPart from "./part-time-mail-part";
+import ContactForm from "../contact-form/contact-form";
 
 type TProps = {
   currentUser: User | null;
@@ -33,6 +34,7 @@ const PartTimeContainer: React.FC<TProps> = ({ currentUser }) => {
           <PartTimeMailPart userData={userData} />
         </Grid>
       </Grid>
+      <ContactForm />
     </Container>
   );
 };
