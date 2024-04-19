@@ -35,10 +35,14 @@ const ProfileItem: React.FC<TProps> = ({
       <Box mx={{ xs: 6, sm: 15, lg: 50 }}>
         <Box bgcolor={"#FE5E00"} borderRadius={1} sx={{ cursor: "pointer" }}>
           <Button
-            disabled={disabled}
             label={primaryLabel}
             onClick={handleSubmit}
-            sx={{ color: "white", fontSize: 16, py: 1 }}
+            sx={{
+              color: "white",
+              fontSize: 16,
+              py: 1,
+              px: { xs: 8, sm: 15, lg: 17 },
+            }}
           />
         </Box>
       </Box>
