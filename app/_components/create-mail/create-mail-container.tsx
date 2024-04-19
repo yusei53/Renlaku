@@ -2,7 +2,7 @@
 import { Tabs, Tab, Box, styled } from "@mui/material";
 import { useRouter, useSearchParams } from "next/navigation";
 import { User } from "@prisma/client";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import TopTabPanel from "../common/tab/top-tab-panel";
 import BottomTabPanel from "../common/tab/bottom-tab-panel";
 
@@ -18,13 +18,15 @@ const CreateMailContainer = ({ currentUser }: { currentUser: User | null }) => {
     }
   }, [category]);
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-    router.push(window.location.pathname + "/?category=" + newValue);
-
-    // 2次リリースでshallow routing optionを実現したい
-    // https://github.com/vercel/next.js/discussions/48320
-    // https://medium.com/@moh.mir36/shallow-routing-with-next-js-v13-app-directory-2d765928c340
-  };
+  const handleChange = useCallback(
+    (event: React.SyntheticEvent, newValue: string) => {
+      router.push(
+        window.location.pathname + "/?category=" + newValue,
+        undefined
+      );
+    },
+    [router]
+  );
 
   return (
     <>
