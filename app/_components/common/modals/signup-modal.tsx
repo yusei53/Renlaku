@@ -52,16 +52,14 @@ const SignupModal = () => {
       const res = await axios.post("/api/signup", data);
 
       if (res.status == 200) {
-        toast.success("アカウントを作成しました！");
-
         await signIn("credentials", {
           ...data,
           redirect: false,
         });
-
+        toast.success("アカウントを作成しました！");
+        signupModal.onClose();
         router.push("/profile");
         router.refresh();
-        signupModal.onClose();
       }
     } catch (error) {
       toast.error("エラーが発生しました" + error);
