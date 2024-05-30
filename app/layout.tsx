@@ -10,10 +10,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import GoogleAnalytics from "./_components/google-analytics/google-analytics";
 import { Suspense } from "react";
 
-const siteName = "Renlaku | メール簡単作成ツール";
+const siteName = "Renlaku | メール作成ツール";
 const description =
-  "Renlakuは簡単にメールを作成できるツールです。直感的なインターフェイスでメール作成の手間を削減し、メールを迅速に作成します。面倒なフォーマット作成や文言の悩みから解放され、時間を節約しながらも思いを的確に伝えるメールを作成できます。";
-
+  "Renlakuは主に大学生やビジネス向けに最適化された簡単にメールを作成できるツールです。直感的な操作でメール作成の手間を削減かつ迅速に作成します。面倒なフォーマット作成や文言の悩みから解放され、時間を効率的に節約します。";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.renlaku.com/"),
   title: {
