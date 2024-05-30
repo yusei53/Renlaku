@@ -9,12 +9,12 @@ type TProps = {
 const CopyButton: React.FC<TProps> = ({ textRef }) => {
   const [openTip, setOpenTip] = useState(false);
 
-  const copyToClipboard = useCallback(() => {
+  const copyToClipboard = () => {
     const text = textRef.current?.innerText || "";
     navigator.clipboard.writeText(text);
     setOpenTip(true);
     setTimeout(() => setOpenTip(false), 1000);
-  }, [textRef]);
+  };
 
   return (
     <Tooltip
