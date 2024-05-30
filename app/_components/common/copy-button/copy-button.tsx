@@ -21,7 +21,7 @@ const CopyButton: React.FC<TProps> = ({ textRef }) => {
       open={openTip}
       placement="top"
       title="Copied!"
-      sx={{ position: "absolute", top: 12, right: 15 }}
+      sx={{ position: "absolute", top: 5, right: 15 }}
     >
       <IconButton color="primary" size="medium" onClick={copyToClipboard}>
         <ContentCopyIcon fontSize="medium" />
