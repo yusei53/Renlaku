@@ -2,7 +2,7 @@
 import { Tabs, Tab, Box, styled } from "@mui/material";
 import { useRouter, useSearchParams } from "next/navigation";
 import { User } from "@prisma/client";
-import { memo, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import TopTabPanel from "../common/tab/top-tab-panel";
 import BottomTabPanel from "../common/tab/bottom-tab-panel";
 
@@ -13,10 +13,10 @@ const CreateMailContainer = ({ currentUser }: { currentUser: User | null }) => {
   const category = searchParams.get("category");
 
   useEffect(() => {
-    if (category) {
-      setTabValue(Array.isArray(category) ? category[0] : category);
+    if (category && category !== tabValue) {
+      setTabValue(category);
     }
-  }, [category]);
+  }, [category, tabValue]);
 
   const handleChange = useCallback(
     (event: React.SyntheticEvent, newValue: string) => {
@@ -49,28 +49,24 @@ interface StyledTabsProps {
   onChange: (event: React.SyntheticEvent, newValue: string) => void;
 }
 
-const StyledTabs = memo(
-  styled((props: StyledTabsProps) => (
-    <Tabs
-      {...props}
-      TabIndicatorProps={{
-        children: <span className="MuiTabs-indicatorSpan" />,
-      }}
-      centered
-    />
-  ))({
-    "& .MuiTabs-indicator": {
-      display: "flex",
-      justifyContent: "center",
-      backgroundColor: "transparent",
-    },
-    "& .MuiTabs-indicatorSpan": {
-      maxWidth: 40,
-      width: "100%",
-      backgroundColor: "#016FE5",
-    },
-  })
-);
+const StyledTabs = styled((props: StyledTabsProps) => (
+  <Tabs
+    {...props}
+    TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+    centered
+  />
+))({
+  "& .MuiTabs-indicator": {
+    display: "flex",
+    justifyContent: "center",
+    backgroundColor: "transparent",
+  },
+  "& .MuiTabs-indicatorSpan": {
+    maxWidth: 40,
+    width: "100%",
+    backgroundColor: "#016FE5",
+  },
+});
 
 type StyledTabProps = {
   label: string;
