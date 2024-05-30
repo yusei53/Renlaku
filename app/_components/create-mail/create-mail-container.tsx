@@ -7,17 +7,16 @@ import TopTabPanel from "../common/tab/top-tab-panel";
 import BottomTabPanel from "../common/tab/bottom-tab-panel";
 
 const CreateMailContainer = ({ currentUser }: { currentUser: User | null }) => {
+  const [tabValue, setTabValue] = useState("skip-class");
   const router = useRouter();
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
 
-  const [tabValue, setTabValue] = useState(() => category || "skip-class");
-
   useEffect(() => {
-    if (category && category !== tabValue) {
-      setTabValue(category);
+    if (category) {
+      setTabValue(Array.isArray(category) ? category[0] : category);
     }
-  }, [category, tabValue]);
+  }, [category]);
 
   const handleChange = useCallback(
     (event: React.SyntheticEvent, newValue: string) => {
