@@ -13,10 +13,10 @@ const CreateMailContainer = ({ currentUser }: { currentUser: User | null }) => {
   const category = searchParams.get("category");
 
   useEffect(() => {
-    if (category && category !== tabValue) {
-      setTabValue(category);
+    if (category) {
+      setTabValue(Array.isArray(category) ? category[0] : category);
     }
-  }, [category, tabValue]);
+  }, [category]);
 
   const handleChange = useCallback(
     (event: React.SyntheticEvent, newValue: string) => {
