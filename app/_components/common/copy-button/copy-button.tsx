@@ -9,19 +9,19 @@ type TProps = {
 const CopyButton: React.FC<TProps> = ({ textRef }) => {
   const [openTip, setOpenTip] = useState(false);
 
-  const copyToClipboard = useCallback(() => {
+  const copyToClipboard = () => {
     const text = textRef.current?.innerText || "";
     navigator.clipboard.writeText(text);
     setOpenTip(true);
     setTimeout(() => setOpenTip(false), 1000);
-  }, [textRef]);
+  };
 
   return (
     <Tooltip
       open={openTip}
       placement="top"
       title="Copied!"
-      sx={{ position: "absolute", top: 12, right: 15 }}
+      sx={{ position: "absolute", top: 5, right: 15 }}
     >
       <IconButton color="primary" size="medium" onClick={copyToClipboard}>
         <ContentCopyIcon fontSize="medium" />
