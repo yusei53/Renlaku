@@ -14,7 +14,7 @@ const CreateMailContainer = ({ currentUser }: { currentUser: User | null }) => {
 
   useEffect(() => {
     if (category) {
-      setTabValue(Array.isArray(category) ? category[0] : category);
+      setTabValue(category);
     }
   }, [category]);
 
