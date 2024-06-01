@@ -16,7 +16,7 @@ const CreateMailContainer = ({ currentUser }: { currentUser: User | null }) => {
     if (category) {
       setTabValue(category);
     }
-  }, [category, tabValue]);
+  }, [category]);
 
   const handleChange = useCallback(
     (event: React.SyntheticEvent, newValue: string) => {
