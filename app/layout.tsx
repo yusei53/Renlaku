@@ -7,8 +7,8 @@ import SignupModal from "./_components/common/modals/signup-modal";
 import LoginModal from "./_components/common/modals/login-modal";
 import { Footer } from "./_components/common/footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import GoogleAnalytics from "./_components/google-analytics/google-analytics";
-import { Suspense } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { GA_TAG_ID } from "./_lib/gtag";
 
 const siteName = "Renlaku | メール作成ツール";
 const description =
@@ -40,9 +40,6 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <Suspense>
-        <GoogleAnalytics />
-      </Suspense>
       <body style={{ margin: 0 }}>
         <AuthContext>
           <ToasterContext />
@@ -54,6 +51,7 @@ export default async function RootLayout({
         </AuthContext>
         <SpeedInsights />
       </body>
+      <GoogleAnalytics gaId={GA_TAG_ID} />
     </html>
   );
 }
